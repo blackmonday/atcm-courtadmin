@@ -97,3 +97,15 @@ function tabGroup(tableObj, which) {
         document.getElementById("tabThreeContent").style.display = "block";
     } 
 }
+
+
+
+
+/* OVERLAY */
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}

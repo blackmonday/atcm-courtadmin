@@ -6,11 +6,20 @@
 
 {% block content %}
 
+<!-- ------- -->
+<!-- OVERLAY -->
 <style>
     tr {
         vertical-align: top;
     }
 </style>
+
+<div id="overlay" onclick="off()">
+    <div id="overlay-info">
+        <div>Are you sure you want to remove this file?</div>
+        <div class="top_15 remove-link" onclick="removeRow1(); off()">Yes</div>
+    </div>
+</div>
 
 <script>
     
@@ -26,10 +35,6 @@
     }
 
 </script>
-
-
-
-
 
 <main id="content" role="main">
     
@@ -66,7 +71,7 @@
             <input class="button" type="submit" value="add a file to upload" onclick="filesAdded()">
             
         </div>
-        
+
         <div id="noFilesAdded" class="column-full">
             
             <hr>
@@ -76,7 +81,7 @@
             
             <hr>
             
-            <p><a href="#">Cancel - go back to case</a></p>
+            <p><a href="billy-smith.html">Cancel - go back to case</a></p>
 
         </div>
         
@@ -98,7 +103,7 @@
                     <tr id="row1">
                         <th scope="row">SJP Notice</th>
                         <td>PDF, 256KB, 3 pages</td>
-                        <td onclick="removeRow1()" class="remove-link">Remove</td>
+                        <td onclick="on()" class="remove-link">Remove</td>
                     </tr>
                 </tbody>
             </table>
@@ -109,7 +114,7 @@
                 <input class="button-secondary" type="submit" value="Upload files">
             </form>
 
-            <p class="top_30"><a href="#">Cancel - go back to case</a></p>
+            <p class="top_30"><a href="billy-smith.html">Cancel - go back to case</a></p>
 
         </div>
 

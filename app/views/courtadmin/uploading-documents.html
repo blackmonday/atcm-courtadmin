@@ -6,52 +6,13 @@
 
 {% block content %}
 
-
-
-
-
-
-
-
-
-
-
-
+<!-- ------- -->
+<!-- OVERLAY -->
 <style>
-    #overlay {
-        position: fixed; /* Sit on top of the page content */
-        display: none; /* Hidden by default */
-        width: 100%; /* Full width (cover the whole page) */
-        height: 100%; /* Full height (cover the whole page) */
-        top: 0; 
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0,0,0,0.8); /* Black background with opacity */
-        z-index: 20000; /* Specify a stack order in case you're using a different order for other elements */
-        cursor: pointer; /* Add a pointer on hover */
-    }
-    #overlay-info {
-        width:300px;background-color:white;padding:30px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
     #noFilesAdded {
         display: none;
     }
 </style>
-
-<script>
-    function on() {
-        document.getElementById("overlay").style.display = "block";
-    }
-
-    function off() {
-        document.getElementById("overlay").style.display = "none";
-    }
-</script>
 
 <div id="overlay" onclick="off()">
     
@@ -62,14 +23,21 @@
 
 </div>
 
-
-
-
-
-
-
-
-
+<script>
+    function removeRow1() {
+        /*document.getElementById("row1").style.display = "none";*/
+        document.getElementById("noFilesAdded").style.display = "block";
+        document.getElementById("filesAdded").style.display = "none";
+    }
+    /*
+    function removeRow2() {
+        document.getElementById("row2").style.display = "none";
+    }
+    function removeRow3() {
+        document.getElementById("row3").style.display = "none";
+    }
+    */
+</script>
 
 <main id="content" role="main">
     
@@ -89,42 +57,18 @@
                         
          </div>
     </div>
-
-    
-    
-    
     
     <div id="noFilesAdded" class="grid-row">
         <div class="column-full">
             <p>No files to uploaded</p>
             
-            <p class="top_30"><a href="">Cancel - go back to case</a></p>
+            <p class="top_30"><a href="billy-smith.html">Cancel - go back to case</a></p>
         </div>
     </div>
- 
-
-    
-    
     
     <div id="filesAdded" class="grid-row">
         <div class="column-full">
  
-            <script>
-                function removeRow1() {
-                    /*document.getElementById("row1").style.display = "none";*/
-                    document.getElementById("noFilesAdded").style.display = "block";
-                    document.getElementById("filesAdded").style.display = "none";
-                }
-                /*
-                function removeRow2() {
-                    document.getElementById("row2").style.display = "none";
-                }
-                function removeRow3() {
-                    document.getElementById("row3").style.display = "none";
-                }
-                */
-            </script>
-
             <table>
                 <thead>
                     <tr>
@@ -183,7 +127,7 @@
                 </tbody>
             </table>
             
-            <p class="top_30"><a href="">Cancel - go back to case</a></p>
+            <p class="top_30"><a href="billy-smith.html">Cancel - go back to case</a></p>
 
         </div>
         
