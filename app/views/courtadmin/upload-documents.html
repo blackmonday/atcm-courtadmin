@@ -1,0 +1,123 @@
+{% extends "layout-CPP.html" %}
+
+{% block page_title %}
+    GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+    tr {
+        vertical-align: top;
+    }
+</style>
+
+<script>
+    
+    function filesAdded() {
+        document.getElementById("noFilesAdded").style.display = "none";
+        document.getElementById("filesAdded").style.display = "block";
+    }
+    
+    function removeRow1() {
+        /*document.getElementById("row1").style.display = "none";*/
+        document.getElementById("noFilesAdded").style.display = "block";
+        document.getElementById("filesAdded").style.display = "none";
+    }
+
+</script>
+
+
+
+
+
+<main id="content" role="main">
+    
+    <div class="grid-row">
+        <div class="column-full">
+            <!-- Alpha phase banner -->
+            {% include "includes/phase_banner_alpha.html" %}
+            {% include "includes/breadcrumb_back.html" %}
+            
+            <div class="peristant-info-banner">
+                <div class="peristant-info-banner-content">9012466 &nbsp;&nbsp;<span class="bold">Billy SMITH</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row top_30">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge top_0 bottom_30">Upload documents</h1>
+            <p>If available you can upload any of the following:</p>
+            <ul class="list list-bullet">
+                <li>a plea document</li>
+                <li>statement of income and outgoings (for example a MC100)</li>
+                <li>other documents (for example a bank statement, email or copy of a travelcard)</li>
+            </ul>
+            <p>Use the ‘Add a file to upload’ button to add individual files to upload to this case.</p>
+
+            <!--
+            <form class="form" action="upload-documents-2" method="post">
+                <input class="button" type="submit" value="add a file to upload">
+            </form>
+            -->
+            
+            <input class="button" type="submit" value="add a file to upload" onclick="filesAdded()">
+            
+        </div>
+        
+        <div id="noFilesAdded" class="column-full">
+            
+            <hr>
+            
+            <h3 class="heading-medium top_30">Files ready to upload</h3>
+            <p>No documents have been uploaded</p>
+            
+            <hr>
+            
+            <p><a href="#">Cancel - go back to case</a></p>
+
+        </div>
+        
+        <div id="filesAdded" class="column-full" style="display:none">
+            
+            <hr>
+            
+            <h3 class="heading-medium top_30">Files ready to upload</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row1">
+                        <th scope="row">SJP Notice</th>
+                        <td>PDF, 256KB, 3 pages</td>
+                        <td onclick="removeRow1()" class="remove-link">Remove</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p class="top_30">After you’ve added all the files you want to upload to this case use the ‘Upload files’ button to add them to the case.</p>
+            
+            <form class="form" action="uploading-documents" method="post">
+                <input class="button-secondary" type="submit" value="Upload files">
+            </form>
+
+            <p class="top_30"><a href="#">Cancel - go back to case</a></p>
+
+        </div>
+
+        
+    </div>
+
+</main>
+
+{% endblock %}
+
+
