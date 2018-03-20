@@ -12,6 +12,104 @@
     }
 </style>
 
+<script>
+    
+    function removeRow1() {
+        document.getElementById("row1").style.display = "none";
+    }
+
+    function removeRow2() {
+        document.getElementById("row2").style.display = "none";
+    }
+
+    function removeRow3() {
+        document.getElementById("row3").style.display = "none";
+    }
+
+</script>
+
+<div id="overlay" onclick="off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>Incomings and outgoings</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeRow2(); off()">
+        <p class="remove-link bottom_0" onclick="off()">cancel</p>
+    </div>
+</div>
+
+<div id="overlay3" onclick="off3()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>SJP notice</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeRow1(); off3()">
+        <p class="remove-link bottom_0" onclick="off3()">cancel</p>
+    </div>
+</div>
+
+<div id="overlay4" onclick="off4()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>{{ data['file-name'] }}</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeRow3(); off4()">
+        <p class="remove-link bottom_0" onclick="off4()">cancel</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
 <main id="content" role="main">
     
     <div class="grid-row">
@@ -36,7 +134,7 @@
                 <input class="button" type="submit" value="Add all details from postal reply">
             </form>
 
-            <div class="tabGroup top_30">
+           <div class="tabGroup top_30">
                 <a id="tabA" class="tab-on" onclick="tabGroup(tabContent, 'TAB-ONE')" href="javascript: void(0)">Case details</a>
                 <a id="tabB" class="tab" onclick="tabGroup(tabContent, 'TAB-TWO')" href="javascript: void(0)">Personal details</a>
                 <a id="tabC" class="tab" onclick="tabGroup(tabContent, 'TAB-THREE')" href="javascript: void(0)">Documents</a>
@@ -107,7 +205,6 @@
                     <h4 class="heading-medium bottom_10">Documents</h4>
                     <table class="top_10">
                         <tr id="row1">
-                            <th class="bold" style="border: none">Uploaded documents</th>
                             <td style="border: none">
                                 <!-- Thumbnail - small icon -->
                                 <div class="download-file">
@@ -118,10 +215,10 @@
                                     </div>
                                 </div>
                             </td>
-                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link">Remove</td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="on3()">Remove</td>
                         </tr>
+                        
                         <tr id="row2">
-                            <th style="border: none"></th>
                            <td style="border: none">
                                 <!-- Thumbnail - small icon -->
                                 <div class="download-file">
@@ -132,12 +229,12 @@
                                     </div>
                                 </div>
                             </td>
-                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link">Remove</td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="on()">Remove</td>
                         </tr>
-
+                        
                     </table>
                     
-                    <p class="top_15"><a href="upload-documents.html" title="Upload more documents">Upload more documents</a></p>
+                    <p class="top_15"><a href="upload-documents.html" title="Upload more documents">Upload documents</a></p>
 
                     <h4 class="heading-medium bottom_10">Online plea</h4>
                     <p class="top_15"><a href="" title="">Defendant's online plea</a></p>
