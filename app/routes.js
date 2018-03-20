@@ -11,9 +11,35 @@ router.get('/', function (req, res) {
 module.exports = router
 
 // *********
-// Dashboard
+// DASHBOARD
 router.post('/courtadmin/upload-documents', function (req, res) {
 
     res.redirect('/courtadmin/uploading-documents')
+    
+})
+// ***********
+// BILLY SMITH
+router.post('/courtadmin/billy-smith', function (req, res) {
+
+    res.redirect('/courtadmin/add-or-change-personal-details')
+    
+})
+router.post('/courtadmin/billy-smith-2', function (req, res) {
+
+    res.redirect('/courtadmin/add-or-change-personal-details')
+    
+})
+// ******************************
+// ADD OR CHANGE PERSONAL DETAILS
+router.post('/courtadmin/add-or-change-personal-details', function (req, res) {
+
+    res.redirect('/courtadmin/add-or-change-income')
+    
+})
+// ********************
+// ADD OR CHANGE INCOME
+router.post('/courtadmin/add-or-change-income', function (req, res) {
+
+    res.redirect('/courtadmin/upload-documents')
     
 })
