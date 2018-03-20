@@ -23,7 +23,7 @@ $(document).ready(function () {
     
     $( "#progress-bar-1" ).animate({
         width: "100%"
-    }, 1500, function() {
+    }, 5000, function() {
         document.getElementById("progressBar1").style.display = "none";
         document.getElementById("uploadDate1").style.display = "table-cell";
         document.getElementById("uploadTime1").style.display = "table-cell";
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     $( "#progress-bar-2" ).animate({
         width: "100%"
-    }, 8000, function() {
+    }, 1500, function() {
         document.getElementById("progressBar2").style.display = "none";
         document.getElementById("uploadDate2").style.display = "table-cell";
         document.getElementById("uploadTime2").style.display = "table-cell";
@@ -44,24 +44,13 @@ $(document).ready(function () {
 
     $( "#progress-bar-3" ).animate({
         width: "100%",
-    }, 4000, function() {
+    }, 8000, function() {
         document.getElementById("progressBar3").style.display = "none";
         document.getElementById("uploadDate3").style.display = "table-cell";
         document.getElementById("uploadTime3").style.display = "table-cell";
         document.getElementById("row3cancel").style.display = "none";
         document.getElementById("row3remove").style.display = "table-cell";
     });
-
-
-
-
-
-
-
-    
-    
-    
-    
     
 })
 

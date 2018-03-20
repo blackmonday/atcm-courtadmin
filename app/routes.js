@@ -12,8 +12,8 @@ module.exports = router
 
 // *********
 // Dashboard
-router.post('/prosecutor/defendant-details-updated', function (req, res) {
+router.post('/courtadmin/upload-documents', function (req, res) {
 
-    res.redirect('/prosecutor/dashboard')
+    res.redirect('/courtadmin/uploading-documents')
     
 })

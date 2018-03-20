@@ -10,16 +10,14 @@
 <!-- OVERLAY -->
 <style>
     tr {
-        vertical-align: top;
+        vertical-align: middle;
+    }
+    .removeFileTable td {
+        font-size: 16px;
+        border: none;
+        padding: 0;
     }
 </style>
-
-<div id="overlay" onclick="off()">
-    <div id="overlay-info">
-        <div>Are you sure you want to remove this file?</div>
-        <div class="top_15 remove-link" onclick="removeRow1(); off()">Yes</div>
-    </div>
-</div>
 
 <script>
     
@@ -35,6 +33,31 @@
     }
 
 </script>
+
+<div id="overlay" onclick="off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>Plea</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeRow1(); off()">
+        <p class="remove-link bottom_0" onclick="off()">cancel</p>
+    </div>
+</div>
 
 <main id="content" role="main">
     
@@ -87,34 +110,36 @@
         
         <div id="filesAdded" class="column-full" style="display:none">
             
-            <hr>
-            
-            <h3 class="heading-medium top_30">Files ready to upload</h3>
+            <form class="form" action="" method="post">
 
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Type</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr id="row1">
-                        <th scope="row">SJP Notice</th>
-                        <td>PDF, 256KB, 3 pages</td>
-                        <td onclick="on()" class="remove-link">Remove</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <p class="top_30">After you’ve added all the files you want to upload to this case use the ‘Upload files’ button to add them to the case.</p>
-            
-            <form class="form" action="uploading-documents" method="post">
+                <hr>
+
+                <h3 class="heading-medium top_30">Files ready to upload</h3>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Type</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="row1">
+                            <th scope="row"><input class="form-control" id="file-name" type="text" name="file-name" value="Plea" style="width:80%"></th>
+                            <td>PDF, 256KB, 3 pages</td>
+                            <td onclick="on()" class="remove-link">Remove</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p class="top_30">After you’ve added all the files you want to upload to this case use the ‘Upload files’ button to add them to the case.</p>
+
                 <input class="button-secondary" type="submit" value="Upload files">
-            </form>
 
-            <p class="top_30"><a href="billy-smith.html">Cancel - go back to case</a></p>
+                <p class="top_30"><a href="billy-smith.html">Cancel - go back to case</a></p>
+                
+            </form>
 
         </div>
 
