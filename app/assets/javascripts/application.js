@@ -90,15 +90,79 @@ function tabGroup(tableObj, which) {
 
 
 
-/* OVERLAY */
-function on() {
-    document.getElementById("overlay").style.display = "block";
+
+
+
+
+
+
+
+
+/* FILE 1 */
+function overlay_file_1_on() {
+    document.getElementById("overlay-file-1").style.display = "block";
+}
+function overlay_file_1_off() {
+    document.getElementById("overlay-file-1").style.display = "none";
+}
+function removeFile1() {
+    document.getElementById("row1").style.display = "none";
 }
 
+
+
+/* FILE 2 */
+function overlay_file_2_on() {
+    document.getElementById("overlay-file-2").style.display = "block";
+}
+function overlay_file_2_off() {
+    document.getElementById("overlay-file-2").style.display = "none";
+}
+function removeFile2() {
+    document.getElementById("row2").style.display = "none";
+}
+
+
+
+/* FILE 3 */
+function overlay_file_3_on() {
+    document.getElementById("overlay-file-3").style.display = "block";
+}
+function overlay_file_3_off() {
+    document.getElementById("overlay-file-3").style.display = "none";
+}
+function removeFile3() {
+    document.getElementById("file3name").innerText = "";
+    document.getElementById("row3").style.display = "none";
+}
+
+/* UPLOAD DOCUMENTS & UPLOADING DOCUMENTS */
 function on2() {
     document.getElementById("overlay2").style.display = "block";
 }
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+function off() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("overlay2").style.display = "none";
+}
+function removeRow1() {
+    /*document.getElementById("row1").style.display = "none";*/
+    document.getElementById("noFilesAdded").style.display = "block";
+    document.getElementById("filesAdded").style.display = "none";
+}
 
+
+
+
+
+
+
+
+
+
+/*
 function on3() {
     document.getElementById("overlay3").style.display = "block";
 }
@@ -107,13 +171,10 @@ function on4() {
     document.getElementById("overlay4").style.display = "block";
 }
 
-function off() {
-    document.getElementById("overlay").style.display = "none";
-    document.getElementById("overlay2").style.display = "none";
-}
 function off3() {
     document.getElementById("overlay3").style.display = "none";
 }
 function off4() {
     document.getElementById("overlay4").style.display = "none";
 }
+*/

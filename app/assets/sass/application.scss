@@ -375,7 +375,7 @@ tr {
 
 
 /* OVERLAY */
-#overlay, #overlay2, #overlay3, #overlay4 {
+#overlay-file-1, #overlay-file-2, #overlay-file-3, #overlay, #overlay2, #overlay3, #overlay4 {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -400,4 +400,15 @@ tr {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+.removeFileTable td {
+    border: none;
+    padding: 0;
+}
+
+
+
+
+#noFilesAdded {
+    display: none;
 }

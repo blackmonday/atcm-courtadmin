@@ -12,11 +12,6 @@
     tr {
         vertical-align: middle;
     }
-    .removeFileTable td {
-        font-size: 16px;
-        border: none;
-        padding: 0;
-    }
 </style>
 
 <script>
@@ -26,8 +21,7 @@
         document.getElementById("filesAdded").style.display = "block";
     }
     
-    function removeRow1() {
-        /*document.getElementById("row1").style.display = "none";*/
+    function uploadRemoveRow1() {
         document.getElementById("noFilesAdded").style.display = "block";
         document.getElementById("filesAdded").style.display = "none";
     }
@@ -54,7 +48,7 @@
                 </tr>
             </tbody>
         </table>
-        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeRow1(); off()">
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="uploadRemoveRow1(); off()">
         <p class="remove-link bottom_0" onclick="off()">cancel</p>
     </div>
 </div>
@@ -91,13 +85,6 @@
             </ul>
             <p>Use the ‘Add a file to upload’ button to add individual files to upload to this case.</p>
 
-            <!--
-            <form class="form" action="upload-documents-2" method="post">
-                <input class="button" type="submit" value="add a file to upload">
-            </form>
-            -->
-            
-            <!--<input class="button" type="submit" value="Add a file to upload" onclick="filesAdded()">-->
             <input class="button" type="submit" value="Add a file to upload" onclick="on2()">
             
         </div>
