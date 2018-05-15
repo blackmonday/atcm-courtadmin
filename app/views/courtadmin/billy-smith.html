@@ -20,6 +20,153 @@
             document.getElementById("row3").style.display = "none";
         }
         
+        /* ************************ */
+        /* ************************ */
+        /* CHECK DEFENDANTS ADDRESS */
+        var defendantAddressLine1 = document.getElementById('defendantAddressLine1').innerText;
+        var defendantAddressLine2 = document.getElementById('defendantAddressLine2').innerText;
+        var defendantAddressLine3 = document.getElementById('defendantAddressLine3').innerText;
+        var defendantAddressCity = document.getElementById('defendantAddressCity').innerText;
+        var defendantAddressPostcode = document.getElementById('defendantAddressPostcode').innerText;
+        
+        if ((defendantAddressLine1 == ", ") || (defendantAddressLine1 == ",")) {
+            document.getElementById('defendantAddressLine1').innerText = "";
+        }
+        if ((defendantAddressLine2 == ", ") || (defendantAddressLine2 == ",")) {
+            document.getElementById('defendantAddressLine2').innerText = "";
+        }
+        if ((defendantAddressLine3 == ", ") || (defendantAddressLine3 == ",")) {
+            document.getElementById('defendantAddressLine3').innerText = "";
+        }
+        if ((defendantAddressCity == ", ") || (defendantAddressCity == ",")) {
+            document.getElementById('defendantAddressCity').innerText = "";
+        }
+        if ((defendantAddressPostcode == ", ") || (defendantAddressPostcode == ",")) {
+            document.getElementById('defendantAddressPostcode').innerText = "";
+        }
+        
+        /* ************************** */
+        /* ************************** */
+        /* CHECK DEFENDANTS ADDRESS 2 */
+        var defendantAddressLine1_2 = document.getElementById('defendantAddressLine1-2').innerHTML;
+        var defendantAddressLine2_2 = document.getElementById('defendantAddressLine2-2').innerHTML;
+        var defendantAddressLine3_2 = document.getElementById('defendantAddressLine3-2').innerHTML;
+        var defendantAddressCity_2 = document.getElementById('defendantAddressCity-2').innerHTML;
+        var defendantAddressPostcode_2 = document.getElementById('defendantAddressPostcode-2').innerHTML;
+        if (defendantAddressLine1_2 == "<br>") {
+            document.getElementById('defendantAddressLine1-2').innerText = "";
+        }
+        if (defendantAddressLine2_2 == "<br>") {
+            document.getElementById('defendantAddressLine2-2').innerText = "";
+        }
+        if (defendantAddressLine3_2 == "<br>") {
+            document.getElementById('defendantAddressLine3-2').innerText = "";
+        }
+        
+        /* **************** */
+        /* DEFENDANTS TITLE */
+        var defendantTitle = document.getElementById('defendantTitle').innerText;
+        if (defendantTitle == " ") {
+            document.getElementById('defendantTitle').style.display = "none";
+        }
+        
+        /* ************************* */
+        /* CHECK DEFENDANT TELEPHONE */
+        var defendantTelephone = document.getElementById('defendantTelephone').innerHTML;
+        if (defendantTelephone == "") {
+            document.getElementById('defendantTelephone').innerHTML = '<a href="add-or-change-personal-details-2.html">Add home telephone</a>';
+        }        
+        
+        /* ************ */
+        /* ************ */
+        /* CONVER MONTH */
+        var month = document.getElementById('month').innerText;
+        if (month == "1") {
+            document.getElementById('month').innerText = "January";
+        } else if (month == "2") {
+            document.getElementById('month').innerText = "February";
+        } else if (month == "3") {
+            document.getElementById('month').innerText = "March";
+        } else if (month == "4") {
+            document.getElementById('month').innerText = "April";
+        } else if (month == "5") {
+            document.getElementById('month').innerText = "May";
+        } else if (month == "6") {
+            document.getElementById('month').innerText = "June";
+        } else if (month == "7") {
+            document.getElementById('month').innerText = "July";
+        } else if (month == "8") {
+            document.getElementById('month').innerText = "August";
+        } else if (month == "9") {
+            document.getElementById('month').innerText = "September";
+        } else if (month == "10") {
+            document.getElementById('month').innerText = "October";
+        } else if (month == "11") {
+            document.getElementById('month').innerText = "November";
+        } else if (month == "12") {
+            document.getElementById('month').innerText = "December";
+        }
+
+        /* ************** */
+        /* ************** */
+        /* CONVER MONTH-2 */
+        var month2 = document.getElementById('month-2').innerText;
+        if (month2 == "1") {
+            document.getElementById('month-2').innerText = "January";
+        } else if (month2 == "2") {
+            document.getElementById('month-2').innerText = "February";
+        } else if (month2 == "3") {
+            document.getElementById('month-2').innerText = "March";
+        } else if (month2 == "4") {
+            document.getElementById('month-2').innerText = "April";
+        } else if (month2 == "5") {
+            document.getElementById('month-2').innerText = "May";
+        } else if (month2 == "6") {
+            document.getElementById('month-2').innerText = "June";
+        } else if (month2 == "7") {
+            document.getElementById('month-2').innerText = "July";
+        } else if (month2 == "8") {
+            document.getElementById('month-2').innerText = "August";
+        } else if (month2 == "9") {
+            document.getElementById('month-2').innerText = "September";
+        } else if (month2 == "10") {
+            document.getElementById('month-2').innerText = "October";
+        } else if (month2 == "11") {
+            document.getElementById('month-2').innerText = "November";
+        } else if (month2 == "12") {
+            document.getElementById('month-2').innerText = "December";
+        }
+
+        /* ******************** */
+        /* ******************** */
+        /* CONVER MONTH - SHORT */
+        var monthShort = document.getElementById('monthShort').innerText;
+        if (monthShort == "1") {
+            document.getElementById('monthShort').innerText = "Jan";
+        } else if (monthShort == "2") {
+            document.getElementById('monthShort').innerText = "Feb";
+        } else if (monthShort == "3") {
+            document.getElementById('monthShort').innerText = "Mar";
+        } else if (monthShort == "4") {
+            document.getElementById('monthShort').innerText = "Apr";
+        } else if (monthShort == "5") {
+            document.getElementById('monthShort').innerText = "May";
+        } else if (monthShort == "6") {
+            document.getElementById('monthShort').innerText = "Jun";
+        } else if (monthShort == "7") {
+            document.getElementById('monthShort').innerText = "Jul";
+        } else if (monthShort == "8") {
+            document.getElementById('monthShort').innerText = "Aug";
+        } else if (monthShort == "9") {
+            document.getElementById('monthShort').innerText = "Sep";
+        } else if (monthShort == "10") {
+            document.getElementById('monthShort').innerText = "Oct";
+        } else if (monthShort == "11") {
+            document.getElementById('monthShort').innerText = "Nov";
+        } else if (monthShort == "12") {
+            document.getElementById('monthShort').innerText = "Dec";
+        }
+
     }
 </script>
 
@@ -102,22 +249,18 @@
     
     <div class="grid-row">
         <div class="column-full">
-            <!-- Alpha phase banner -->
             {% include "includes/phase_banner_alpha.html" %}
             {% include "includes/breadcrumb_back.html" %}
-            
-            <div class="peristant-info-banner">
-                <div class="peristant-info-banner-content">9012466 <span class="bold">Billy SMITH</span></div>
-            </div>
+            {% include "includes/persist-info-banner.html" %}
         </div>
     </div>
 
     <div class="grid-row top_30">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge top_0 bottom_5">Billy SMITH</h1>
-            <p class="form-hint bottom_0">4 April 1970 (46 years old)</p>
-            <p class="form-hint">7 Rock Road, London SE3 8YH</p>
+            <h1 class="heading-xlarge top_0 bottom_5">{{data['defendant-first-name']}} <span class="last-name">{{data['defendant-last-name']}}</span></h1>
+            <p class="form-hint bottom_0">{{data['defendant-dob-day']}} <span id="month">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</p>
+            <p class="form-hint"><span id="defendantAddressLine1">{{data['defendant-address-line-1']}}, </span><span id="defendantAddressLine2">{{data['defendant-address-line-2']}}, </span><span id="defendantAddressLine3">{{data['defendant-address-line-3']}}, </span><span id="defendantAddressCity">{{data['defendant-address-city']}}, </span><span id="defendantAddressPostcode">{{data['defendant-address-postcode']}}</span></p>
             
             <form class="form" action="" method="post">
                 <input class="button" type="submit" value="Add all details from postal reply">
@@ -135,15 +278,15 @@
                     <table class="top_10">
                         <tr>
                             <th class="bold" style="border: none">Case status</th>
-                            <td style="border: none">No plea received</td>
+                            <td style="border: none">{{data['case-status']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Prosecutor</th>
-                            <td style="border: none">Transport for London</td>
+                            <td style="border: none">{{data['prosecutor']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Notice served</th>
-                            <td style="border: none">28 February 2018</td>
+                            <td style="border: none">{{data['notice-served']}}</td>
                         </tr>
                     </table>
                 </div>
@@ -152,37 +295,39 @@
                     <table class="top_10">
                         <tr>
                             <th class="bold" style="border: none">Name</th>
-                            <td style="border: none">Billy SMITH</td>
+                            <td style="border: none"><span id="defendantTitle">{{data['defendant-title']}} </span>{{data['defendant-first-name']}} {{data['defendant-last-name']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Date of birth</th>
-                            <td style="border: none">4 April 1970 (46 years old)</td>
+                            <td style="border: none">{{data['defendant-dob-day']}} <span id="month-2">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Address</th>
-                            <td style="border: none">7 Rock Road<br>
-                            London<br>
-                            SE3 8YH</td>
+                            <td style="border: none"><span id="defendantAddressLine1-2">{{data['defendant-address-line-1']}}<br></span>
+                                <span id="defendantAddressLine2-2">{{data['defendant-address-line-2']}}<br></span>
+                                <span id="defendantAddressLine3-2">{{data['defendant-address-line-3']}}<br></span>
+                                <span id="defendantAddressCity-2">{{data['defendant-address-city']}}<br></span>
+                                <span id="defendantAddressPostcode-2">{{data['defendant-address-postcode']}}</span></td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Email</th>
-                            <td style="border: none">billy_s765@gmail.com</td>
+                            <td style="border: none" id="defendantEmail">{{data['defendant-email']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Home telephone</th>
-                            <td style="border: none" class=""><a href="add-or-change-personal-details.html">Add home telephone</a></td>
+                            <td style="border: none" class="" id="defendantTelephone">{{data['defendant-telephone']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Mobile</th>
-                            <td style="border: none">07975337198</td>
+                            <td style="border: none">{{data['defendant-mobile']}}</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">National Insurance number</th>
-                            <td style="border: none">VO 12 3445 56 D</td>
+                            <td style="border: none">{{data['defendant-nin']}}</td>
                         </tr>
                     </table>
                     
-                    <p class="top_15"><a href="add-or-change-personal-details.html">Change personal details</a></p>
+                    <p class="top_15"><a href="add-or-change-personal-details-2.html">Change personal details</a></p>
                 </div>
                 <div id="tabThreeContent">
 
@@ -247,17 +392,17 @@
             <hr class="top_60 bottom_60">
             
             <h2 class="heading-large">Offence 1</h2>
-            <h3 class="heading-medium bottom_5">Passenger used ticket issued for another person</h3>
-            <p>On 10/06/2014 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take.</p>
+            <h3 class="heading-medium bottom_5">{{data['offence-title']}}</h3>
+            <p>{{data['offence-description']}}</p>
             
             <div class="top_60 bottom_60">
-                <span class="label">No plea received</span>
+                <span class="label">{{data['case-status']}}</span>
             </div>
             
             <hr class="top_60 bottom_60">
 
             <h3 class="heading-medium bottom_5">Statement of facts</h3>
-            <p>I, Inspector Morse, was suspicious as the defendant kept moving seats away from me. When asked for a ticket he replied “I don’t have one as I am not really on this train, you’re seeing an illusion”. I had no choice but to issue him with a ticket.</p>
+            <p>{{data['statement-of-facts']}}</p>
 
         </div>
         

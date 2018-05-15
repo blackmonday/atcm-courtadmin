@@ -12,6 +12,74 @@
     }
 </style>
 
+<script>
+
+    window.onload = function() {
+
+        /* ************ */
+        /* ************ */
+        /* CONVER MONTH */
+        var month = document.getElementById('month').innerText;
+        if (month == "1") {
+            document.getElementById('month').innerText = "January";
+        } else if (month == "2") {
+            document.getElementById('month').innerText = "February";
+        } else if (month == "3") {
+            document.getElementById('month').innerText = "March";
+        } else if (month == "4") {
+            document.getElementById('month').innerText = "April";
+        } else if (month == "5") {
+            document.getElementById('month').innerText = "May";
+        } else if (month == "6") {
+            document.getElementById('month').innerText = "June";
+        } else if (month == "7") {
+            document.getElementById('month').innerText = "July";
+        } else if (month == "8") {
+            document.getElementById('month').innerText = "August";
+        } else if (month == "9") {
+            document.getElementById('month').innerText = "September";
+        } else if (month == "10") {
+            document.getElementById('month').innerText = "October";
+        } else if (month == "11") {
+            document.getElementById('month').innerText = "November";
+        } else if (month == "12") {
+            document.getElementById('month').innerText = "December";
+        }
+
+        /* ******************** */
+        /* ******************** */
+        /* CONVER MONTH - SHORT */
+        var monthShort = document.getElementById('monthShort').innerText;
+        if (monthShort == "1") {
+            document.getElementById('monthShort').innerText = "Jan";
+        } else if (monthShort == "2") {
+            document.getElementById('monthShort').innerText = "Feb";
+        } else if (monthShort == "3") {
+            document.getElementById('monthShort').innerText = "Mar";
+        } else if (monthShort == "4") {
+            document.getElementById('monthShort').innerText = "Apr";
+        } else if (monthShort == "5") {
+            document.getElementById('monthShort').innerText = "May";
+        } else if (monthShort == "6") {
+            document.getElementById('monthShort').innerText = "Jun";
+        } else if (monthShort == "7") {
+            document.getElementById('monthShort').innerText = "Jul";
+        } else if (monthShort == "8") {
+            document.getElementById('monthShort').innerText = "Aug";
+        } else if (monthShort == "9") {
+            document.getElementById('monthShort').innerText = "Sep";
+        } else if (monthShort == "10") {
+            document.getElementById('monthShort').innerText = "Oct";
+        } else if (monthShort == "11") {
+            document.getElementById('monthShort').innerText = "Nov";
+        } else if (monthShort == "12") {
+            document.getElementById('monthShort').innerText = "Dec";
+        }
+        
+    }
+
+</script>
+
 <main id="content" role="main">
     
     <div class="grid-row">
@@ -71,20 +139,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row"><a href="billy-smith.html">SMITH Billy</th>
-                        <td>9012466</td>
-                        <td>No plea received</td>
-                        <td>28 Feb 2018</td>
-                        <td>Transport for London</td>
-                        <td>28 February 2018</td>
-                        <!--
-                        <th scope="row"><a href="case-details-page.html"><span class="last-name">{{data['defendents-last-name']}}</span> {{data['defendents-first-name']}}</a></th>
+                        <th scope="row"><a href="billy-smith.html"><span class="last-name">{{data['defendant-last-name']}}</span> {{data['defendant-first-name']}}</a></th>
                         <td>{{data['case-reference-number']}}</td>
                         <td>{{data['case-status']}}</td>
-                        <td>{{data['defendents-dob-short']}}</td>
+                        <td>{{data['defendant-dob-day']}} <span id="month" style="display:none">{{data['defendant-dob-month']}}</span><span id="monthShort">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}}</td>
                         <td>{{data['prosecutor']}}</td>
                         <td>{{data['notice-served']}}</td>
-                        -->
                     </tr>
                 </tbody>
             </table>
