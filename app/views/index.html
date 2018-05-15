@@ -1,4 +1,4 @@
-{% extends "layout-CPP.html" %}
+{% extends "layout-CPP-no-sign-in.html" %}
 
 {% block page_title %}
     GOV.UK prototype kit
@@ -15,13 +15,33 @@
                 <span class="heading-secondary">Using GOV.UK prototype kit {{releaseVersion}}</span>
             </h1>{{releaseVersion | log }}
             
-            <p>This design demo is intended for user testing with court administrators and includes the following:</p>
+            <h2 class="top_60 bottom_10 heading-medium">What does this prototype include?</h2>
             
+            <p class="heading-small">TfL</p>
             <ul class="list list-bullet">
-                <li>upload and remove files flow</li>
+                <li>Search for 'Smith' <span style="color:#6F777B">- Any other text will result in the same search results</span></li>
+                <li>Upload and remove files flow <span style="color:#6F777B">- For Billy Smiths case found via 'Search for a case'</span></li>
+                <li>Add or change personal details <span style="color:#6F777B">- Any changes made are not currently being saved</span></li>
+            </ul>
+            
+            <p class="heading-small">IdAM sign in</p>
+            <ul class="list list-bullet">
+                <ul class="list list-bullet bottom_0">
+                    <li>Username can be anything</li>
+                    <li>Password can be anything</li>
+                </ul>
+            </ul>
+            
+            <p class="heading-small">IdAM sign out</p>
+            <ul class="list list-bullet">
+                <ul class="list list-bullet bottom_0">
+                    <li>Signing out completely will take the user to GOV.UK homepage</li>
+                </ul>
             </ul>
 
-            <div class="top_30"><a href="/courtadmin/dashboard">Let's get started</a></div>
+            <form class="form" action="" method="post">
+                <input class="button" type="submit" value="Let's get started">
+            </form>
 
         </div>
     </div>

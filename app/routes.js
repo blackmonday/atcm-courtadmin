@@ -10,13 +10,30 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
-// *********
-// DASHBOARD
+// *****
+// INDEX
+router.post('/', function (req, res) {
+    
+    res.redirect('/courtadmin/sign-in')
+    
+})
+
+// **************
+// DASHBOARD PAGE
+router.post('/courtadmin/dashboard', function (req, res) {
+                    
+    res.redirect('/courtadmin/search-for-a-case')
+    
+})
+    
+// ****************
+// UPLOAD DOCUMENTS
 router.post('/courtadmin/upload-documents', function (req, res) {
 
     res.redirect('/courtadmin/uploading-documents')
     
 })
+
 // ***********
 // BILLY SMITH
 router.post('/courtadmin/billy-smith', function (req, res) {
@@ -41,5 +58,29 @@ router.post('/courtadmin/add-or-change-personal-details', function (req, res) {
 router.post('/courtadmin/add-or-change-income', function (req, res) {
 
     res.redirect('/courtadmin/upload-documents')
+    
+})
+
+// *******
+// SIGN IN
+router.post('/courtadmin/sign-in', function (req, res) {
+    
+    res.redirect('/courtadmin/sign-in-authentication')
+    
+})
+
+// ************************
+// SIGN IN - AUTHENTICATION
+router.post('/courtadmin/sign-in-authentication', function (req, res) {
+    
+    res.redirect('/courtadmin/dashboard')
+    
+})
+
+// ********
+// SIGN OUT
+router.post('/courtadmin/sign-out', function (req, res) {
+    
+    res.redirect('http://gov.uk')
     
 })
