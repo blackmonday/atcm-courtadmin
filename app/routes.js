@@ -44,10 +44,15 @@ router.post('/', function (req, res) {
     req.session.data['defendant-employment-status-group'] = "Employed (full or part-time)"
     req.session.data['defendant-claiming-benefits-group'] = "No"
     
+    req.session.data['defendant-plea'] = "Not guilty"
+    req.session.data['defendant-mitigation'] = "Lorem ipsum dolor sit amet"
+    
     req.session.data['offence-title'] = "Passenger used ticket issued for another person"
     req.session.data['offence-description'] = "On 10/06/2014 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take."
     
     req.session.data['statement-of-facts'] = "I, Inspector Morse, was suspicious as the defendant kept moving seats away from me. When asked for a ticket he replied “I don’t have one as I am not really on this train, you’re seeing an illusion”. I had no choice but to issue him with a ticket."
+    
+    req.session.data['case-notes'] = "No case notes have been added."
 
     res.redirect('/courtadmin/sign-in')
     
@@ -111,6 +116,38 @@ router.post('/courtadmin/add-or-change-income', function (req, res) {
 router.post('/courtadmin/add-or-change-income-2', function (req, res) {
 
     res.redirect('/courtadmin/case-details')
+    
+})
+
+// **********************
+// DEFENDANTS ONLINE PLEA
+router.post('/courtadmin/defendants-online-plea', function (req, res) {
+
+    res.redirect('/courtadmin/case-details')
+    
+})
+
+// *********************
+// FIND AND PRINT ORDERS
+router.post('/courtadmin/find-and-print-orders', function (req, res) {
+
+    res.redirect('/courtadmin/dashboard')
+    
+})
+
+// *****************************
+// Create register for the media
+router.post('/courtadmin/create-register-for-the-media', function (req, res) {
+
+    res.redirect('/courtadmin/dashboard')
+    
+})
+
+// **************************************
+// Print list of cases for public display
+router.post('/courtadmin/print-list-of-cases-for-public-display', function (req, res) {
+
+    res.redirect('/courtadmin/dashboard')
     
 })
 
