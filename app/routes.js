@@ -179,6 +179,6 @@ router.post('/courtadmin/sign-in-authentication', function (req, res) {
 // SIGN OUT
 router.post('/courtadmin/sign-out', function (req, res) {
     
-    res.redirect('http://gov.uk')
+    res.redirect('/courtadmin/sign-in')
     
 })
