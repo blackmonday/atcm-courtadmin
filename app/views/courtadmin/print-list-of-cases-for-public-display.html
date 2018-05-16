@@ -11,6 +11,22 @@
 
 <script>
     window.onload = function() {
+        
+        var d = new Date();
+        //document.getElementById("todaysDate").innerHTML = d;
+        
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var ampm = d.getHours() >= 12 ? 'pm' : 'am';
+
+        document.getElementById("todaysDayOfWeek").innerHTML = days[d.getDay()];
+        document.getElementById("todaysDate").innerHTML = d.getDate();
+        document.getElementById("todaysMonth").innerHTML = months[d.getMonth()];
+        document.getElementById("todaysYear").innerHTML = d.getFullYear();
+        document.getElementById("todaysHours").innerHTML = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours();
+        document.getElementById("todaysMinutes").innerHTML = d.getMinutes();
+        document.getElementById("ampm").innerHTML = ampm;
+        
     }
 </script>
 
@@ -24,25 +40,41 @@
 
     <div class="grid-row top_30">
         
-        <div class="column-two-thirds">
+        <div class="column-full">
 
-            <div id="financialPenalty">
-                
-                <form class="form" action="" method="post">
-                    
-                    <h1 class="heading-xlarge top_30 bottom_30">Print list of cases for public display</h1>
+            <h1 class="heading-xlarge top_30 bottom_30">Cases awaiting decision under Single Justice Procedure</h1>
 
-                    <div class="form-group">
-                        <input class="button top_15" type="submit" value="Coming soon">
-                    <div class="top_15"><a href="javascript:history.go(-1);">Cancel</a></div>
-                    </div>
-                    
-                </form>
+            <p>List generated on <span id="todaysDayOfWeek"></span> <span id="todaysDate"></span> <span id="todaysMonth"></span> <span id="todaysYear"></span> at <span id="todaysHours"></span>:<span id="todaysMinutes"></span><span id="ampm"></span></p>
 
+            <div class="panel panel-border-wide">
+                <p>2 cases awaiting decision</p>
             </div>
-        </div>
 
-        <div class="column-one-third">
+            <div class="" style="text-align: right">
+                <input class="button top_15" type="submit" value="Print">
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Offence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">SMITH Billy</th>
+                        <td>Passenger used ticket issued for another person</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">CLARK Stuart</th>
+                        <td>Travel on railway without paying fare</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p class="top_30"><a href="dashboard.html">Return to dashboard</a></p>
+            
         </div>
             
     </div>

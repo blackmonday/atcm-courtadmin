@@ -147,7 +147,7 @@ router.post('/courtadmin/find-and-print-orders', function (req, res) {
 // Create register for the media
 router.post('/courtadmin/create-register-for-the-media', function (req, res) {
 
-    res.redirect('/courtadmin/dashboard')
+    //res.redirect('/courtadmin/dashboard')
     
 })
 
