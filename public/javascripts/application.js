@@ -62,28 +62,44 @@ function tabGroup(tableObj, which) {
     tabA = 'TAB-ONE';
     tabB = 'TAB-TWO';
     tabC = 'TAB-THREE';
+    tabD = 'TAB-FOUR';
 
     if(which == tabA) {
         document.getElementById("tabA").className = "tab-on";
         document.getElementById("tabB").className = "tab";
         document.getElementById("tabC").className = "tab";
+        document.getElementById("tabD").className = "tab";
         document.getElementById("tabOneContent").style.display = "block";
         document.getElementById("tabTwoContent").style.display = "none";
         document.getElementById("tabThreeContent").style.display = "none";
+        document.getElementById("tabFourContent").style.display = "none";
     } else if(which == tabB) {
         document.getElementById("tabA").className = "tab";
         document.getElementById("tabB").className = "tab-on";
         document.getElementById("tabC").className = "tab";
+        document.getElementById("tabD").className = "tab";
         document.getElementById("tabOneContent").style.display = "none";
         document.getElementById("tabTwoContent").style.display = "block";
         document.getElementById("tabThreeContent").style.display = "none";
+        document.getElementById("tabFourContent").style.display = "none";
     } else if(which == tabC) {
         document.getElementById("tabA").className = "tab";
         document.getElementById("tabB").className = "tab";
         document.getElementById("tabC").className = "tab-on";
+        document.getElementById("tabD").className = "tab";
         document.getElementById("tabOneContent").style.display = "none";
         document.getElementById("tabTwoContent").style.display = "none";
         document.getElementById("tabThreeContent").style.display = "block";
+        document.getElementById("tabFourContent").style.display = "none";
+    } else if(which == tabD) {
+        document.getElementById("tabA").className = "tab";
+        document.getElementById("tabB").className = "tab";
+        document.getElementById("tabC").className = "tab";
+        document.getElementById("tabD").className = "tab-on";
+        document.getElementById("tabOneContent").style.display = "none";
+        document.getElementById("tabTwoContent").style.display = "none";
+        document.getElementById("tabThreeContent").style.display = "none";
+        document.getElementById("tabFourContent").style.display = "block";
     } 
 }
 

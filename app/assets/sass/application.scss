@@ -233,7 +233,7 @@ $path: "/public/images/";
     background: #BFC1C3;
     margin-top: -1px;
 }
-#tabTwoContent, #tabThreeContent {
+#tabTwoContent, #tabThreeContent, #tabFourContent {
     display: none;
 }
 
@@ -445,6 +445,32 @@ tr {
 
 
 
-    .last-name {
-        text-transform: uppercase;
-    }
+.last-name {
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+// Adding £ to form inputs
+.input-icon {
+    position: relative;
+}
+
+.input-icon > i {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 54%;
+    pointer-events: none;
+    width: 30px;
+    text-align: center;
+    font-style: normal;
+}
+
+.input-icon > input {
+    padding-left: 25px;
+    padding-right: 0;
+}

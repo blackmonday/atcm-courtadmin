@@ -1,0 +1,469 @@
+{% extends "layout-CPP.html" %}
+
+{% block page_title %}
+    GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<style>
+    tr {
+        vertical-align: top;
+    }
+</style>
+
+<script>
+    window.onload = function() {
+        
+        var file3name = document.getElementById("file3name").innerText;
+        if (file3name == "") {
+            document.getElementById("row3").style.display = "none";
+        }
+        
+        /* ************************ */
+        /* ************************ */
+        /* CHECK DEFENDANTS ADDRESS */
+        var defendantAddressLine1 = document.getElementById('defendantAddressLine1').innerText;
+        var defendantAddressLine2 = document.getElementById('defendantAddressLine2').innerText;
+        var defendantAddressLine3 = document.getElementById('defendantAddressLine3').innerText;
+        var defendantAddressCity = document.getElementById('defendantAddressCity').innerText;
+        var defendantAddressPostcode = document.getElementById('defendantAddressPostcode').innerText;
+        
+        if ((defendantAddressLine1 == ", ") || (defendantAddressLine1 == ",")) {
+            document.getElementById('defendantAddressLine1').innerText = "";
+        }
+        if ((defendantAddressLine2 == ", ") || (defendantAddressLine2 == ",")) {
+            document.getElementById('defendantAddressLine2').innerText = "";
+        }
+        if ((defendantAddressLine3 == ", ") || (defendantAddressLine3 == ",")) {
+            document.getElementById('defendantAddressLine3').innerText = "";
+        }
+        if ((defendantAddressCity == ", ") || (defendantAddressCity == ",")) {
+            document.getElementById('defendantAddressCity').innerText = "";
+        }
+        if ((defendantAddressPostcode == ", ") || (defendantAddressPostcode == ",")) {
+            document.getElementById('defendantAddressPostcode').innerText = "";
+        }
+        
+        /* ************************** */
+        /* ************************** */
+        /* CHECK DEFENDANTS ADDRESS 2 */
+        var defendantAddressLine1_2 = document.getElementById('defendantAddressLine1-2').innerHTML;
+        var defendantAddressLine2_2 = document.getElementById('defendantAddressLine2-2').innerHTML;
+        var defendantAddressLine3_2 = document.getElementById('defendantAddressLine3-2').innerHTML;
+        var defendantAddressCity_2 = document.getElementById('defendantAddressCity-2').innerHTML;
+        var defendantAddressPostcode_2 = document.getElementById('defendantAddressPostcode-2').innerHTML;
+        if (defendantAddressLine1_2 == "<br>") {
+            document.getElementById('defendantAddressLine1-2').innerText = "";
+        }
+        if (defendantAddressLine2_2 == "<br>") {
+            document.getElementById('defendantAddressLine2-2').innerText = "";
+        }
+        if (defendantAddressLine3_2 == "<br>") {
+            document.getElementById('defendantAddressLine3-2').innerText = "";
+        }
+        
+        /* **************** */
+        /* DEFENDANTS TITLE */
+        var defendantTitle = document.getElementById('defendantTitle').innerText;
+        if (defendantTitle == " ") {
+            document.getElementById('defendantTitle').style.display = "none";
+        }
+        
+        /* ************************* */
+        /* CHECK DEFENDANT TELEPHONE */
+        var defendantTelephone = document.getElementById('defendantTelephone').innerHTML;
+        if (defendantTelephone == "") {
+            document.getElementById('defendantTelephone').innerHTML = '<a href="add-or-change-personal-details-2.html">Add home telephone</a>';
+        }        
+        
+        /* **************************** */
+        /* **************************** */
+        /* INCOME CALCULATION TO WEEKLY */
+        var incomeCalculation = Number(document.getElementById("incomeCalculation").innerText);
+        var incomeFrequency = document.getElementById("incomeFrequency").innerText;
+        
+        if (incomeFrequency == "Weekly") {
+            document.getElementById("incomeCalculation").innerText = incomeCalculation;
+        } else if (incomeFrequency == "Fortnightly") {
+            document.getElementById("incomeCalculation").innerText = (incomeCalculation/2).toFixed(2);
+        } else if (incomeFrequency == "Monthly") {
+            document.getElementById("incomeCalculation").innerText = (incomeCalculation/4).toFixed(2);
+        } else if (incomeFrequency == "Annually") {
+            document.getElementById("incomeCalculation").innerText = (incomeCalculation/52).toFixed(2);
+            //document.getElementById("incomeCalculation").innerText = incomeCalculation/52;
+        }
+
+        
+        /* ************ */
+        /* ************ */
+        /* CONVER MONTH */
+        var month = document.getElementById('month').innerText;
+        if (month == "1") {
+            document.getElementById('month').innerText = "January";
+        } else if (month == "2") {
+            document.getElementById('month').innerText = "February";
+        } else if (month == "3") {
+            document.getElementById('month').innerText = "March";
+        } else if (month == "4") {
+            document.getElementById('month').innerText = "April";
+        } else if (month == "5") {
+            document.getElementById('month').innerText = "May";
+        } else if (month == "6") {
+            document.getElementById('month').innerText = "June";
+        } else if (month == "7") {
+            document.getElementById('month').innerText = "July";
+        } else if (month == "8") {
+            document.getElementById('month').innerText = "August";
+        } else if (month == "9") {
+            document.getElementById('month').innerText = "September";
+        } else if (month == "10") {
+            document.getElementById('month').innerText = "October";
+        } else if (month == "11") {
+            document.getElementById('month').innerText = "November";
+        } else if (month == "12") {
+            document.getElementById('month').innerText = "December";
+        }
+
+        /* ************** */
+        /* ************** */
+        /* CONVER MONTH-2 */
+        var month2 = document.getElementById('month-2').innerText;
+        if (month2 == "1") {
+            document.getElementById('month-2').innerText = "January";
+        } else if (month2 == "2") {
+            document.getElementById('month-2').innerText = "February";
+        } else if (month2 == "3") {
+            document.getElementById('month-2').innerText = "March";
+        } else if (month2 == "4") {
+            document.getElementById('month-2').innerText = "April";
+        } else if (month2 == "5") {
+            document.getElementById('month-2').innerText = "May";
+        } else if (month2 == "6") {
+            document.getElementById('month-2').innerText = "June";
+        } else if (month2 == "7") {
+            document.getElementById('month-2').innerText = "July";
+        } else if (month2 == "8") {
+            document.getElementById('month-2').innerText = "August";
+        } else if (month2 == "9") {
+            document.getElementById('month-2').innerText = "September";
+        } else if (month2 == "10") {
+            document.getElementById('month-2').innerText = "October";
+        } else if (month2 == "11") {
+            document.getElementById('month-2').innerText = "November";
+        } else if (month2 == "12") {
+            document.getElementById('month-2').innerText = "December";
+        }
+
+        /* ******************** */
+        /* ******************** */
+        /* CONVER MONTH - SHORT */
+        var monthShort = document.getElementById('monthShort').innerText;
+        if (monthShort == "1") {
+            document.getElementById('monthShort').innerText = "Jan";
+        } else if (monthShort == "2") {
+            document.getElementById('monthShort').innerText = "Feb";
+        } else if (monthShort == "3") {
+            document.getElementById('monthShort').innerText = "Mar";
+        } else if (monthShort == "4") {
+            document.getElementById('monthShort').innerText = "Apr";
+        } else if (monthShort == "5") {
+            document.getElementById('monthShort').innerText = "May";
+        } else if (monthShort == "6") {
+            document.getElementById('monthShort').innerText = "Jun";
+        } else if (monthShort == "7") {
+            document.getElementById('monthShort').innerText = "Jul";
+        } else if (monthShort == "8") {
+            document.getElementById('monthShort').innerText = "Aug";
+        } else if (monthShort == "9") {
+            document.getElementById('monthShort').innerText = "Sep";
+        } else if (monthShort == "10") {
+            document.getElementById('monthShort').innerText = "Oct";
+        } else if (monthShort == "11") {
+            document.getElementById('monthShort').innerText = "Nov";
+        } else if (monthShort == "12") {
+            document.getElementById('monthShort').innerText = "Dec";
+        }
+        
+    }
+</script>
+
+<div id="overlay-file-1" onclick="overlay_file_1_off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>SJP notice</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeFile1(); overlay_file_1_off()">
+        <p class="remove-link bottom_0" onclick="overlay_file_1_off()">cancel</p>
+    </div>
+</div>
+
+<div id="overlay-file-2" onclick="overlay_file_2_off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>Incomings and outgoings</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeFile2(); overlay_file_2_off()">
+        <p class="remove-link bottom_0" onclick="overlay_file_2_off()">cancel</p>
+    </div>
+</div>
+
+<div id="overlay-file-3" onclick="overlay_file_3_off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>{{ data['file-name'] }}</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeFile3(); overlay_file_3_off()">
+        <p class="remove-link bottom_0" onclick="overlay_file_3_off()">cancel</p>
+    </div>
+</div>
+
+<main id="content" role="main">
+    
+    <div class="grid-row">
+        <div class="column-full">
+            {% include "includes/phase_banner_alpha.html" %}
+            {% include "includes/breadcrumb_back.html" %}
+            {% include "includes/persist-info-banner.html" %}
+        </div>
+    </div>
+
+    <div class="grid-row top_30">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge top_0 bottom_5">{{data['defendant-first-name']}} <span class="last-name">{{data['defendant-last-name']}}</span></h1>
+            <p class="form-hint bottom_0">{{data['defendant-dob-day']}} <span id="month">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</p>
+            <p class="form-hint"><span id="defendantAddressLine1">{{data['defendant-address-line-1']}}, </span><span id="defendantAddressLine2">{{data['defendant-address-line-2']}}, </span><span id="defendantAddressLine3">{{data['defendant-address-line-3']}}, </span><span id="defendantAddressCity">{{data['defendant-address-city']}}, </span><span id="defendantAddressPostcode">{{data['defendant-address-postcode']}}</span></p>
+            
+            <form class="form" action="" method="post">
+                <input class="button" type="submit" value="Add all details from postal reply">
+            </form>
+
+           <div class="tabGroup top_30">
+                <a id="tabA" class="tab-on" onclick="tabGroup(tabContent, 'TAB-ONE')" href="javascript: void(0)">Case details</a>
+                <a id="tabB" class="tab" onclick="tabGroup(tabContent, 'TAB-TWO')" href="javascript: void(0)">Defendant details</a>
+                <a id="tabD" class="tab" onclick="tabGroup(tabContent, 'TAB-FOUR')" href="javascript: void(0)">Income</a>
+                <a id="tabC" class="tab" onclick="tabGroup(tabContent, 'TAB-THREE')" href="javascript: void(0)">Documents</a>
+                <hr>
+            </div>
+            <div id="tabContent" class="top_30">
+                <div id="tabOneContent">
+                    <h4 class="heading-medium bottom_10">Case details</h4>
+                    <table class="top_10">
+                        <tr>
+                            <th class="bold" style="border: none">Case status</th>
+                            <td style="border: none">{{data['case-status']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Prosecutor</th>
+                            <td style="border: none">{{data['prosecutor']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Notice served</th>
+                            <td style="border: none">{{data['notice-served']}}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="tabTwoContent">
+                    <h4 class="heading-medium bottom_10">Personal details</h4>
+                    <table class="top_10">
+                        <tr>
+                            <th class="bold" style="border: none">Name</th>
+                            <td style="border: none"><span id="defendantTitle">{{data['defendant-title']}} </span>{{data['defendant-first-name']}} {{data['defendant-last-name']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Date of birth</th>
+                            <td style="border: none">{{data['defendant-dob-day']}} <span id="month-2">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Address</th>
+                            <td style="border: none"><span id="defendantAddressLine1-2">{{data['defendant-address-line-1']}}<br></span>
+                                <span id="defendantAddressLine2-2">{{data['defendant-address-line-2']}}<br></span>
+                                <span id="defendantAddressLine3-2">{{data['defendant-address-line-3']}}<br></span>
+                                <span id="defendantAddressCity-2">{{data['defendant-address-city']}}<br></span>
+                                <span id="defendantAddressPostcode-2">{{data['defendant-address-postcode']}}</span></td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Email</th>
+                            <td style="border: none" id="defendantEmail">{{data['defendant-email']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Home telephone</th>
+                            <td style="border: none" class="" id="defendantTelephone">{{data['defendant-telephone']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Mobile</th>
+                            <td style="border: none">{{data['defendant-mobile']}}</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="top_15"><a href="add-or-change-personal-details-2.html">Change defendant details</a></p>
+                </div>
+                <div id="tabThreeContent">
+
+                    <h4 class="heading-medium bottom_10">Documents</h4>
+                    <table class="top_10">
+                        
+                        <!-- DOCUMENT 1 -->
+                        <tr id="row1">
+                            <td style="border: none">
+                                <!-- Thumbnail - small icon -->
+                                <div class="download-file">
+                                    <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
+                                    <div class="download-file-text">
+                                        <span class="font-xsmall dummy-link">SJP notice</span>
+                                        <span class="font-xsmall">PDF, 157KB, 2 pages</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_1_on()">Remove</td>
+                        </tr>
+                        
+                        <!-- DOCUMENT 2 -->
+                        <tr id="row2">
+                           <td style="border: none">
+                                <!-- Thumbnail - small icon -->
+                                <div class="download-file">
+                                    <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
+                                    <div class="download-file-text">
+                                        <span class="font-xsmall dummy-link">Incomings and outgoings</span>
+                                        <span class="font-xsmall">PDF, 157KB, 2 pages</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_2_on()">Remove</td>
+                        </tr>
+                        
+                        <!-- DOCUMENT THREE -->
+                        <tr id="row3">
+                            <td style="border: none">
+                                <!-- Thumbnail - small icon -->
+                                <div class="download-file">
+                                    <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
+                                    <div class="download-file-text">
+                                        <span id="file3name" class="font-xsmall dummy-link">{{ data['file-name'] }}</span>
+                                        <span class="font-xsmall">PDF, 256KB, 3 pages</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_3_on()">Remove</td>
+                        </tr>
+                        
+                    </table>
+                    
+                    <p class="top_15"><a href="upload-documents.html" title="Upload more documents">Upload documents</a></p>
+
+                    <h4 class="heading-medium bottom_10">Online plea</h4>
+                    <p class="top_15 dummy-link">Defendant's online plea</p>
+         
+                </div>
+                <div id="tabFourContent">
+                
+                    <h4 class="heading-medium bottom_10">Income</h4>
+                    
+                    <table class="top_10">
+                        <tr>
+                            <th class="bold" style="border: none">National Insurance number</th>
+                            <td style="border: none">{{data['defendant-nin']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Net income (converted to weekly)</th>
+                            <td style="border: none">£<span id="incomeCalculation">{{data['defendant-net-income']}}</span><span id="incomeFrequency" style="display:none">{{data['defendant-income-frequency-group']}}</span></td>
+
+                            
+                            
+                            
+                            
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Employment status</th>
+                            <td style="border: none">{{data['defendant-employment-status-group']}}</td>
+                        </tr>
+                        <tr>
+                            <th class="bold" style="border: none">Is the defendent claiming benefits?</th>
+                            <td style="border: none">{{data['defendant-claiming-benefits-group']}}</td>
+                        </tr>
+                    </table>
+                    
+                    <p class="top_15"><a href="add-or-change-income-2.html">Change income</a></p>
+                    
+                </div>
+            </div>
+            
+            <hr class="top_60 bottom_60">
+            
+            <h2 class="heading-large">Offence 1</h2>
+            <h3 class="heading-medium bottom_5">{{data['offence-title']}}</h3>
+            <p>{{data['offence-description']}}</p>
+            
+            <div class="top_60 bottom_60">
+                <span class="label">{{data['case-status']}}</span>
+            </div>
+            
+            <hr class="top_60 bottom_60">
+
+            <h3 class="heading-medium bottom_5">Statement of facts</h3>
+            <p>{{data['statement-of-facts']}}</p>
+
+        </div>
+        
+        <div class="coloumn-one-third">
+            <!-- RIGHT COLUMN NAVIGATION - VARIATION FIVE -->
+            <!--
+            <div class="right-column-nav">
+                <hr class="bold-hr">
+                <h3 class="heading-medium">Case options</h3>
+                <p><a href="">Withdraw offence</a></p>
+            </div>
+            -->
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

@@ -14,6 +14,14 @@
     
 </style>
 
+<script>
+    
+    window.onload = function() {
+                
+    }
+    
+</script>
+
 <main id="content" role="main">
     
     <div class="grid-row">
@@ -59,7 +67,7 @@
                 <!-- Date of birth -->
                 <div class="form-group top_15">
                     <fieldset>
-                        
+
                         <legend>
                             <span class="form-label">
                                 Date of birth
@@ -80,7 +88,7 @@
                                 <input class="form-control" id="new-dob-year" name="new-dob-year" type="number" pattern="[0-9]*" value="{{data['defendant-dob-year']}}">
                             </div>
                         </div>
-                        
+                    
                     </fieldset>
                 </div>
 
@@ -91,15 +99,17 @@
 
                         <label class="form-label" for="new-address">Address</label>
                         <input class="form-control" id="new-address-line-1" type="text" name="new-address-line-1" value="{{data['defendant-address-line-1']}}">
+                        
                         <input class="form-control top_5" id="new-address-line-2" type="text" name="new-address-line-2" value="{{data['defendant-address-line-2']}}">
-                        <input class="form-control top_5" id="new-address-line-3" type="text" name="new-address-line-2" value="{{data['defendant-address-line-3']}}">
+                        
+                        <input class="form-control top_5" id="new-address-line-3" type="text" name="new-address-line-3" value="{{data['defendant-address-line-3']}}">
 
                         <label class="form-label top_15" for="new-address-city">Town or city</label>
                         <input class="form-control" id="new-address-city" type="text" name="new-address-city" value="{{data['defendant-address-city']}}">
 
                         <label class="form-label top_15" for="new-address-postcode">Postcode</label>
                         <input class="form-control" id="new-address-ostcode" type="text" name="new-address-postcode" value="{{data['defendant-address-postcode']}}">
-                        
+
                     </fieldset>
                 </div>
                 
@@ -121,7 +131,7 @@
                 </div>
                 
                 <form class="form" action="" method="post">
-                    <input class="button top_30" type="submit" value="Save and continue">
+                    <input class="button top_30" type="submit" value="Save">
                     <div class="top_15"><a href="javascript:history.go(-1);">Cancel</a></div>
                 </form>
                 
