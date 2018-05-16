@@ -127,11 +127,19 @@ router.post('/courtadmin/defendants-online-plea', function (req, res) {
     
 })
 
+// ****************************
+// FIND AND PRINT ORDERS SEARCH
+router.post('/courtadmin/find-and-print-orders-search', function (req, res) {
+
+    res.redirect('/courtadmin/find-and-print-orders')
+    
+})
+
 // *********************
 // FIND AND PRINT ORDERS
 router.post('/courtadmin/find-and-print-orders', function (req, res) {
 
-    res.redirect('/courtadmin/dashboard')
+    res.redirect('/courtadmin/find-and-print-orders-search')
     
 })
 

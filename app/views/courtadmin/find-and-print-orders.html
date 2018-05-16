@@ -11,6 +11,67 @@
 
 <script>
     window.onload = function() {
+        
+        /* ***************** */
+        /* ***************** */
+        /* CONVER FROM MONTH */
+        var from_month = document.getElementById('from-month').innerText;
+        if (from_month == "1") {
+            document.getElementById('from-month').innerText = "January";
+        } else if (from_month == "2") {
+            document.getElementById('from-month').innerText = "February";
+        } else if (from_month == "3") {
+            document.getElementById('from-month').innerText = "March";
+        } else if (from_month == "4") {
+            document.getElementById('from-month').innerText = "April";
+        } else if (from_month == "5") {
+            document.getElementById('from-month').innerText = "May";
+        } else if (from_month == "6") {
+            document.getElementById('from-month').innerText = "June";
+        } else if (from_month == "7") {
+            document.getElementById('from-month').innerText = "July";
+        } else if (from_month == "8") {
+            document.getElementById('from-month').innerText = "August";
+        } else if (from_month == "9") {
+            document.getElementById('from-month').innerText = "September";
+        } else if (from_month == "10") {
+            document.getElementById('from-month').innerText = "October";
+        } else if (from_month == "11") {
+            document.getElementById('from-month').innerText = "November";
+        } else if (from_month == "12") {
+            document.getElementById('from-month').innerText = "December";
+        }
+        
+        /* *************** */
+        /* *************** */
+        /* CONVER TO MONTH */
+        var to_month = document.getElementById('to-month').innerText;
+        if (to_month == "1") {
+            document.getElementById('to-month').innerText = "January";
+        } else if (to_month == "2") {
+            document.getElementById('to-month').innerText = "February";
+        } else if (to_month == "3") {
+            document.getElementById('to-month').innerText = "March";
+        } else if (to_month == "4") {
+            document.getElementById('to-month').innerText = "April";
+        } else if (to_month == "5") {
+            document.getElementById('to-month').innerText = "May";
+        } else if (to_month == "6") {
+            document.getElementById('to-month').innerText = "June";
+        } else if (to_month == "7") {
+            document.getElementById('to-month').innerText = "July";
+        } else if (to_month == "8") {
+            document.getElementById('to-month').innerText = "August";
+        } else if (to_month == "9") {
+            document.getElementById('to-month').innerText = "September";
+        } else if (to_month == "10") {
+            document.getElementById('to-month').innerText = "October";
+        } else if (to_month == "11") {
+            document.getElementById('to-month').innerText = "November";
+        } else if (to_month == "12") {
+            document.getElementById('to-month').innerText = "December";
+        }
+        
     }
 </script>
 
@@ -24,25 +85,49 @@
 
     <div class="grid-row top_30">
         
-        <div class="column-two-thirds">
+        <div class="column-full">
 
-            <div id="financialPenalty">
-                
-                <form class="form" action="" method="post">
-                    
-                    <h1 class="heading-xlarge top_30 bottom_30">Find and print orders</h1>
+            <h1 class="heading-xlarge top_30 bottom_30">Find and print orders</h1>
 
-                    <div class="form-group">
-                        <input class="button top_15" type="submit" value="Coming soon">
-                    <div class="top_15"><a href="javascript:history.go(-1);">Cancel</a></div>
-                    </div>
-                    
-                </form>
+            <p>Search results for {{data['from-day']}} <span id="from-month">{{data['from-month']}}</span> {{data['from-year']}} to {{data['to-day']}} <span id="to-month">{{data['to-month']}}</span> {{data['to-year']}}</p>
 
+            <div class="panel panel-border-wide">
+                <p>2 orders found</p>
             </div>
-        </div>
 
-        <div class="column-one-third">
+             <form class="form" action="" method="post">
+                <div class="form-group" style="text-align: right">
+                    <input class="button top_15" type="submit" value="Search again">
+                </div>
+            </form>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Case reference number</th>
+                        <th scope="col">Defendant name</th>
+                        <th scope="col">Orders</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>9012466</td>
+                        <td>SMITH Billy</td>
+                        <td><span class="dummy-link">View and print</span></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>9012467</td>
+                        <td>CHANT Jack</td>
+                        <td><span class="dummy-link">View and print</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p class="top_30"><a href="dashboard.html">Return to dashboard</a></p>
+            
         </div>
             
     </div>
