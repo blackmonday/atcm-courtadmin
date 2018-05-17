@@ -15,99 +15,19 @@
 <script>
 
     window.onload = function() {
-
+        
         /* ************ */
         /* ************ */
         /* CONVER MONTH */
-        /*
-        var month = document.getElementById('month').innerText;
-        if (month == "1") {
-            document.getElementById('month').innerText = "January";
-        } else if (month == "2") {
-            document.getElementById('month').innerText = "February";
-        } else if (month == "3") {
-            document.getElementById('month').innerText = "March";
-        } else if (month == "4") {
-            document.getElementById('month').innerText = "April";
-        } else if (month == "5") {
-            document.getElementById('month').innerText = "May";
-        } else if (month == "6") {
-            document.getElementById('month').innerText = "June";
-        } else if (month == "7") {
-            document.getElementById('month').innerText = "July";
-        } else if (month == "8") {
-            document.getElementById('month').innerText = "August";
-        } else if (month == "9") {
-            document.getElementById('month').innerText = "September";
-        } else if (month == "10") {
-            document.getElementById('month').innerText = "October";
-        } else if (month == "11") {
-            document.getElementById('month').innerText = "November";
-        } else if (month == "12") {
-            document.getElementById('month').innerText = "December";
-        }
-        */
-
-        /* ******************** */
-        /* ******************** */
-        /* CONVER MONTH - SHORT */
         var monthShort = document.getElementById('monthShort').innerText;
-        if (monthShort == "1") {
-            document.getElementById('monthShort').innerText = "Jan";
-        } else if (monthShort == "2") {
-            document.getElementById('monthShort').innerText = "Feb";
-        } else if (monthShort == "3") {
-            document.getElementById('monthShort').innerText = "Mar";
-        } else if (monthShort == "4") {
-            document.getElementById('monthShort').innerText = "Apr";
-        } else if (monthShort == "5") {
-            document.getElementById('monthShort').innerText = "May";
-        } else if (monthShort == "6") {
-            document.getElementById('monthShort').innerText = "Jun";
-        } else if (monthShort == "7") {
-            document.getElementById('monthShort').innerText = "Jul";
-        } else if (monthShort == "8") {
-            document.getElementById('monthShort').innerText = "Aug";
-        } else if (monthShort == "9") {
-            document.getElementById('monthShort').innerText = "Sep";
-        } else if (monthShort == "10") {
-            document.getElementById('monthShort').innerText = "Oct";
-        } else if (monthShort == "11") {
-            document.getElementById('monthShort').innerText = "Nov";
-        } else if (monthShort == "12") {
-            document.getElementById('monthShort').innerText = "Dec";
-        }
-        
-        /* ********************** */
-        /* ********************** */
-        /* CONVER MONTH 2 - SHORT */
         var monthShort2 = document.getElementById('monthShort-2').innerText;
-        if (monthShort2 == "1") {
-            document.getElementById('monthShort-2').innerText = "Jan";
-        } else if (monthShort2 == "2") {
-            document.getElementById('monthShort-2').innerText = "Feb";
-        } else if (monthShort2 == "3") {
-            document.getElementById('monthShort-2').innerText = "Mar";
-        } else if (monthShort2 == "4") {
-            document.getElementById('monthShort-2').innerText = "Apr";
-        } else if (monthShort2 == "5") {
-            document.getElementById('monthShort-2').innerText = "May";
-        } else if (monthShort2 == "6") {
-            document.getElementById('monthShort-2').innerText = "Jun";
-        } else if (monthShort2 == "7") {
-            document.getElementById('monthShort-2').innerText = "Jul";
-        } else if (monthShort2 == "8") {
-            document.getElementById('monthShort-2').innerText = "Aug";
-        } else if (monthShort2 == "9") {
-            document.getElementById('monthShort-2').innerText = "Sep";
-        } else if (monthShort2 == "10") {
-            document.getElementById('monthShort-2').innerText = "Oct";
-        } else if (monthShort2 == "11") {
-            document.getElementById('monthShort-2').innerText = "Nov";
-        } else if (monthShort2 == "12") {
-            document.getElementById('monthShort-2').innerText = "Dec";
-        }
         
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var monthsShort = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+        document.getElementById('monthShort').innerText = monthsShort[monthShort];
+        document.getElementById('monthShort-2').innerText = monthsShort[monthShort2];
+
     }
     
 </script>
@@ -182,7 +102,7 @@
                         <td>{{data['case-status']}}</td>
                         <td>{{data['defendant-dob-day']}} <span id="month" style="display:none">{{data['defendant-dob-month']}}</span><span id="monthShort">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}}</td>
                         <td>{{data['prosecutor']}}</td>
-                        <td>{{data['notice-served']}}</td>
+                        <td>{{data['notice-served-short']}}</td>
                     </tr>
                     <tr>
                         <th scope="row" class="dummy-link"><span class="last-name">{{data['defendant-last-name-2']}}</span> {{data['defendant-first-name-2']}}</th>
@@ -190,7 +110,7 @@
                         <td>{{data['case-status-2']}}</td>
                         <td>{{data['defendant-dob-day-2']}} <span id="month" style="display:none">{{data['defendant-dob-month-2']}}</span><span id="monthShort-2">{{data['defendant-dob-month-2']}}</span> {{data['defendant-dob-year-2']}}</td>
                         <td>{{data['prosecutor']}}</td>
-                        <td>{{data['notice-served-2']}}</td>
+                        <td>{{data['notice-served-short-2']}}</td>
                     </tr>
                 </tbody>
             </table>
