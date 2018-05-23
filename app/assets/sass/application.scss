@@ -375,7 +375,7 @@ tr {
 
 
 /* OVERLAY */
-#overlay-file-1, #overlay-file-2, #overlay-file-3, #overlay, #overlay2, #overlay3, #overlay4 {
+#overlay-file-1, #overlay-file-2, #overlay-file-3, #overlay-file-4, #overlay, #overlay2, #overlay3, #overlay4 {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
     width: 100%; /* Full width (cover the whole page) */
@@ -419,6 +419,16 @@ tr {
 .dummy-link {
     text-decoration: underline;
     color:#005EA5;
+}
+// Dummy link 2
+.dummy-link-2 {
+    text-decoration: underline;
+    color:#005EA5;
+}
+.dummy-link-2:hover {
+    text-decoration: underline;
+    color:#2B8CC4;
+    cursor: pointer;
 }
 
 

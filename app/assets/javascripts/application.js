@@ -21,25 +21,53 @@ $(document).ready(function () {
     
     
     
+    
+    
+    
+    var count = 0;
+    var numberOfFilesAtStart = document.getElementById('numberOfFiles').innerText;
+    var numberOfFilesCancelledAtStart = document.getElementById('count2').innerText;
+    
     $( "#progress-bar-1" ).animate({
         width: "100%"
-    }, 5000, function() {
+    }, 6500, function() {
         document.getElementById("progressBar1").style.display = "none";
         document.getElementById("uploadDate1").style.display = "table-cell";
         document.getElementById("uploadTime1").style.display = "table-cell";
         document.getElementById("row1cancel").style.display = "none";
-        document.getElementById("row1remove").style.display = "table-cell";
+        //document.getElementById("row1remove").style.display = "table-cell";
+        count++;
+        document.getElementById("count").innerText = count;
+        
+        //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
+        
+        if (numberOfFilesAtStart == (count+count2)) {
+            //window.location.href = "documents-successfully-uploaded";
+            document.getElementById("uploadingHeader").innerText = "Document uploads complete";
+            document.getElementById("greenButton").style.display = "block";
+        }
 
     });
 
     $( "#progress-bar-2" ).animate({
         width: "100%"
-    }, 1500, function() {
+    }, 5000, function() {
         document.getElementById("progressBar2").style.display = "none";
         document.getElementById("uploadDate2").style.display = "table-cell";
         document.getElementById("uploadTime2").style.display = "table-cell";
         document.getElementById("row2cancel").style.display = "none";
-        document.getElementById("row2remove").style.display = "table-cell";
+        //document.getElementById("row2remove").style.display = "table-cell";
+        count++;
+        document.getElementById("count").innerText = count;
+        
+        //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
+        
+        if (numberOfFilesAtStart == (count+count2)) {
+            //window.location.href = "documents-successfully-uploaded";
+            document.getElementById("uploadingHeader").innerText = "Document uploads complete";
+            document.getElementById("greenButton").style.display = "block";
+        }
+
     });
 
     $( "#progress-bar-3" ).animate({
@@ -49,9 +77,31 @@ $(document).ready(function () {
         document.getElementById("uploadDate3").style.display = "table-cell";
         document.getElementById("uploadTime3").style.display = "table-cell";
         document.getElementById("row3cancel").style.display = "none";
-        document.getElementById("row3remove").style.display = "table-cell";
+        //document.getElementById("row3remove").style.display = "table-cell";
+        count++;
+        document.getElementById("count").innerText = count;
+        
+        //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
+        
+        if (numberOfFilesAtStart == (count+count2)) {
+            //window.location.href = "documents-successfully-uploaded";
+            document.getElementById("uploadingHeader").innerText = "Document uploads complete";
+            document.getElementById("greenButton").style.display = "block";
+        }
+
     });
-    
+        
+    $("#row1cancel").click(function(){
+        $("#progress-bar-1").stop();
+    });
+    $("#row2cancel").click(function(){
+        $("#progress-bar-2").stop();
+    });
+    $("#row3cancel").click(function(){
+        $("#progress-bar-3").stop();
+    });
+
+
 })
 
 
@@ -125,8 +175,6 @@ function removeFile1() {
     document.getElementById("row1").style.display = "none";
 }
 
-
-
 /* FILE 2 */
 function overlay_file_2_on() {
     document.getElementById("overlay-file-2").style.display = "block";
@@ -135,10 +183,9 @@ function overlay_file_2_off() {
     document.getElementById("overlay-file-2").style.display = "none";
 }
 function removeFile2() {
+    document.getElementById("file2name").innerText = "";
     document.getElementById("row2").style.display = "none";
 }
-
-
 
 /* FILE 3 */
 function overlay_file_3_on() {
@@ -151,6 +198,28 @@ function removeFile3() {
     document.getElementById("file3name").innerText = "";
     document.getElementById("row3").style.display = "none";
 }
+
+/* FILE 4 */
+function overlay_file_4_on() {
+    document.getElementById("overlay-file-4").style.display = "block";
+}
+function overlay_file_4_off() {
+    document.getElementById("overlay-file-4").style.display = "none";
+}
+function removeFile4() {
+    document.getElementById("file4name").innerText = "";
+    document.getElementById("row4").style.display = "none";
+}
+
+
+
+
+
+
+
+
+
+
 
 /* UPLOAD DOCUMENTS & UPLOADING DOCUMENTS */
 function on2() {

@@ -15,9 +15,19 @@
 <script>
     window.onload = function() {
                         
+        var file2name = document.getElementById("file2name").innerText;
+        if (file2name == "") {
+            document.getElementById("row2").style.display = "none";
+        }
+        
         var file3name = document.getElementById("file3name").innerText;
         if (file3name == "") {
             document.getElementById("row3").style.display = "none";
+        }
+        
+        var file4name = document.getElementById("file4name").innerText;
+        if (file4name == "") {
+            document.getElementById("row4").style.display = "none";
         }
         
         /* ************************ */
@@ -221,7 +231,7 @@
             <tbody>
                 <tr>
                     <td class="bold">Name</td>
-                    <td>Incomings and outgoings</td>
+                    <td>{{data['plea-document']}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Type</td>
@@ -246,7 +256,7 @@
             <tbody>
                 <tr>
                     <td class="bold">Name</td>
-                    <td>{{ data['file-name'] }}</td>
+                    <td>{{ data['income-document'] }}</td>
                 </tr>
                 <tr>
                     <td class="bold">Type</td>
@@ -260,6 +270,31 @@
         </table>
         <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeFile3(); overlay_file_3_off()">
         <p class="remove-link bottom_0" onclick="overlay_file_3_off()">cancel</p>
+    </div>
+</div>
+
+<div id="overlay-file-4" onclick="overlay_file_4_off()">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td>{{ data['other-document'] }}</td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="removeFile4(); overlay_file_4_off()">
+        <p class="remove-link bottom_0" onclick="overlay_file_4_off()">cancel</p>
     </div>
 </div>
 
@@ -375,7 +410,8 @@
                                     </div>
                                 </div>
                             </td>
-                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_1_on()">Remove</td>
+                            <!--<td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_1_on()">Remove</td>-->
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="dummy-link">Remove</td>
                         </tr>
                         
                         <!-- DOCUMENT 2 -->
@@ -385,7 +421,7 @@
                                 <div class="download-file">
                                     <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
                                     <div class="download-file-text">
-                                        <span class="font-xsmall dummy-link">Incomings and outgoings</span>
+                                        <span id="file2name" class="font-xsmall dummy-link">{{ data['plea-document'] }}</span>
                                         <span class="font-xsmall">PDF, 157KB, 2 pages</span>
                                     </div>
                                 </div>
@@ -400,12 +436,27 @@
                                 <div class="download-file">
                                     <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
                                     <div class="download-file-text">
-                                        <span id="file3name" class="font-xsmall dummy-link">{{ data['file-name'] }}</span>
+                                        <span id="file3name" class="font-xsmall dummy-link">{{ data['income-document'] }}</span>
                                         <span class="font-xsmall">PDF, 256KB, 3 pages</span>
                                     </div>
                                 </div>
                             </td>
                             <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_3_on()">Remove</td>
+                        </tr>
+                        
+                        <!-- DOCUMENT FOUR -->
+                        <tr id="row4">
+                            <td style="border: none">
+                                <!-- Thumbnail - small icon -->
+                                <div class="download-file">
+                                    <img src="/public/images/Thumbnail%20icon%20-%20small.png" title="document title">
+                                    <div class="download-file-text">
+                                        <span id="file4name" class="font-xsmall dummy-link">{{ data['other-document'] }}</span>
+                                        <span class="font-xsmall">PDF, 256KB, 3 pages</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size: 16px;border: none;vertical-align:middle" class="remove-link" onclick="overlay_file_4_on()">Remove</td>
                         </tr>
                         
                     </table>

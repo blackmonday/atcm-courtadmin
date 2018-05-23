@@ -1,0 +1,188 @@
+{% extends "layout-CPP.html" %}
+
+{% block page_title %}
+    GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<script>
+    window.onload = function() {
+        
+        var d = new Date();
+        //document.getElementById("todaysDate").innerHTML = d;
+        
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var ampm = d.getHours() >= 12 ? 'pm' : 'am';
+        var minutes = d.getMinutes() >= 10 ? d.getMinutes() : "0"+d.getMinutes();
+        var today = d.getDate() +" "+ months[d.getMonth()] +" "+  d.getFullYear();
+        var timestamp = (d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours()) +":"+ minutes +""+ ampm;
+        
+        document.getElementById("uploadDate1").innerHTML = today;
+        document.getElementById("uploadDate2").innerHTML = today;
+        document.getElementById("uploadDate3").innerHTML = today;
+        
+        document.getElementById("uploadTime1").innerHTML = timestamp;
+        document.getElementById("uploadTime2").innerHTML = timestamp;
+        document.getElementById("uploadTime3").innerHTML = timestamp;
+        
+        /*
+        document.getElementById("todaysDayOfWeek").innerHTML = days[d.getDay()];
+        document.getElementById("todaysDate").innerHTML = d.getDate();
+        document.getElementById("todaysMonth").innerHTML = months[d.getMonth()];
+        document.getElementById("todaysYear").innerHTML = d.getFullYear();
+        document.getElementById("todaysHours").innerHTML = d.getHours().toString().length == 1 ? '0'+d.getHours() : d.getHours();
+        document.getElementById("todaysMinutes").innerHTML = d.getMinutes();
+        document.getElementById("ampm").innerHTML = ampm;
+        */
+        
+    }
+    
+    var whichOne;
+    var whichOneCount = 3;
+    
+    function remove(x) {
+        document.getElementById('overlay').style.display = "block";
+        if (x == "row1") {
+            document.getElementById('file-name').innerHTML = "Plea document";
+        } else if (x == "row2") {
+            document.getElementById('file-name').innerHTML = "MC100";
+        } else if (x == "row3") {
+            document.getElementById('file-name').innerHTML = "Other document one";
+        }
+        whichOne = x;
+    }
+    
+    function confirm() {
+        whichOneCount = whichOneCount-1;
+        document.getElementById(whichOne).style.display = "none";
+        document.getElementById('overlay').style.display = "none";
+        if (whichOneCount <= 0) {
+            document.getElementById('noFilesAdded').style.display = "block";
+            document.getElementById('filesAdded').style.display = "none";
+        }
+    }
+    
+</script>
+
+<div id="overlay" style="display:none">
+    <div id="overlay-info">
+        <h3 class="heading-medium top_0 bottom_15">Remove a file</h3>
+        <p class="top_15 bottom_15">Are you sure you want to remove the following file?</p>        
+        <table class="removeFileTable">
+            <tbody>
+                <tr>
+                    <td class="bold">Name</td>
+                    <td id="file-name"></td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>PDF, 256KB, 3 pages</td>
+                </tr>
+                <tr>
+                    <td class="bold">Uploaded on</td>
+                    <td>15 January 2018</td>
+                </tr>
+                <tr>
+                    <td class="bold">Upload time</td>
+                    <td>10:56am</td>
+                </tr>
+            </tbody>
+        </table>
+        <input class="button top_20 bottom_15" type="submit" value="Confirm and remove file" onclick="confirm()">
+        <p class="remove-link bottom_0" onclick="off()">cancel</p>
+    </div>
+</div>
+
+<main id="content" role="main">
+    
+    <div class="grid-row">
+        <div class="column-full">
+            <!-- Alpha phase banner -->
+            {% include "includes/phase_banner_alpha.html" %}
+            {% include "includes/breadcrumb_back.html" %}
+            {% include "includes/persist-info-banner.html" %}
+            
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <h1 class="heading-xlarge top_30 bottom_30">Documents successfully uploaded</h1>             
+         </div>
+    </div>
+    
+    <div id="noFilesAdded" class="grid-row">
+        <div class="column-full">
+            <div>
+                <img src="/public/images/alert-icon-black.svg" style="float: left; margin-right:10px"><h2 class="heading-medium top_30 bottom_15" style="vertical-align: middle">All document uploads have been removed</h2>
+            </div>
+            
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <input class="button top_30" type="submit" value="Back to case">
+                </div>
+                <div class="top_15"><a href="upload-documents.html">Upload more documents</a></div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="filesAdded" class="grid-row">
+        <div class="column-full">
+ 
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col" style="width:30%">Name</th>
+                        <th scope="col" style="width:30%">Type</th>
+                        <th scope="col">Uploaded on</th>
+                        <th scope="col">time</th>
+                        <th scope="col" style="width:30px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr id="row1">
+                        <th scope="row">Plea document</th>
+                        <td>PDF, 256KB, 3 pages</td>
+                        <td id="uploadDate1">33 May 2018</td>
+                        <td id="uploadTime1">10:51am</td>
+                        <td id="row1remove" class="remove-link" onclick="remove('row1')">Remove</td>
+                    </tr>
+                    
+                    <tr id="row2">
+                        <th scope="row">MC100</th>
+                        <td>PDF, 256KB, 3 pages</td>
+                        <td id="uploadDate2">33 May 2018</td>
+                        <td id="uploadTime2">10:51am</td>
+                        <td id="row2remove" class="remove-link" onclick="remove('row2')">Remove</td>
+                    </tr>
+                    
+                    <tr id="row3">
+                        <th scope="row">Other document one</th>
+                        <td>PDF, 256KB, 3 pages</td>
+                        <td id="uploadDate3">33 May 2018</td>
+                        <td id="uploadTime3">10:51am</td>
+                        <td id="row1remove" class="remove-link" onclick="remove('row3')">Remove</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <input class="button top_30" type="submit" value="Back to case">
+                </div>
+                <div class="top_15"><a href="upload-documents.html">Upload more documents</a></div>
+            </form>
+            
+        </div>
+        
+        
+    </div>
+</main>
+
+{% endblock %}
+
+

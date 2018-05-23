@@ -51,8 +51,12 @@ router.post('/', function (req, res) {
     req.session.data['offence-description'] = "On 10/06/2014 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take."
     
     req.session.data['statement-of-facts'] = "I, Inspector Morse, was suspicious as the defendant kept moving seats away from me. When asked for a ticket he replied “I don’t have one as I am not really on this train, you’re seeing an illusion”. I had no choice but to issue him with a ticket."
-    
+        
     req.session.data['case-notes'] = "No case notes have been added."
+    
+    req.session.data['plea-document'] = ""
+    req.session.data['income-document'] = ""
+    req.session.data['other-document'] = ""
 
     // ************************************
     //CASE DETAILS 2 - TRANSPORT FOR LONDON
@@ -111,6 +115,22 @@ router.post('/courtadmin/dashboard', function (req, res) {
 router.post('/courtadmin/upload-documents', function (req, res) {
 
     res.redirect('/courtadmin/uploading-documents')
+    
+})
+
+// *******************
+// UPLOADING DOCUMENTS
+router.post('/courtadmin/uploadING-documents', function (req, res) {
+
+    res.redirect('/courtadmin/case-details')
+    
+})
+
+// *******************************
+// DOCUMENTS SUCCESSFULLY UPLOADED
+router.post('/courtadmin/documents-successfully-uploaded', function (req, res) {
+
+    res.redirect('/courtadmin/case-details')
     
 })
 
