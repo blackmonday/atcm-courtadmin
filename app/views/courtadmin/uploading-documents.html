@@ -7,7 +7,36 @@
 {% block content %}
 
 <script>
+    
+    var numberOfFiles;
+    var numberOfFilesAtStart;
+    var pleaDocumentStatus;
+    var incomeDocumentStatus;
+    var otherDocumentStatus;
+    
     window.onload = function() {
+        
+        numberOfFiles = document.getElementById('numberOfFiles').innerText;
+        
+        pleaDocumentStatus = document.getElementById('pleaDocumentStatus').innerText;
+        incomeDocumentStatus = document.getElementById('incomeDocumentStatus').innerText;
+        otherDocumentStatus = document.getElementById('otherDocumentStatus').innerText;
+        
+        if (pleaDocumentStatus == "on") {
+            numberOfFiles = Number(numberOfFiles) + 1; 
+            document.getElementById('row1').style.display = "table-row";
+        }
+        if (incomeDocumentStatus == "on") {
+            numberOfFiles = Number(numberOfFiles) + 1; 
+            document.getElementById('row2').style.display = "table-row";
+        }
+        if (otherDocumentStatus == "on") {
+            numberOfFiles = Number(numberOfFiles) + 1; 
+            document.getElementById('row3').style.display = "table-row";
+        }
+        
+        document.getElementById('numberOfFiles').innerText = numberOfFiles;
+        numberOfFilesAtStart = numberOfFiles;
     }
     
     function remove(x) {
@@ -23,7 +52,7 @@
         count2++;
         document.getElementById("count2").innerText = count2;
         document.getElementById("numberOfFiles").innerText = document.getElementById("numberOfFiles").innerText - 1;
-        if (count2 >= 3) {
+        if (count2 >= numberOfFiles) {
             document.getElementById("active").style.display = "none";
             document.getElementById("greenButton").style.display = "block";
             document.getElementById("cancelledText").innerText = "All uploads have been cancelled";
@@ -60,11 +89,6 @@
             document.getElementById('filesAdded').style.display = "none";
         }
     }
-
-    
-    
-    
-    
     
 </script>
 
@@ -111,11 +135,17 @@
 
     <div class="grid-row">
         <div class="column-two-thirds">
+            
+            <div style="display:none">
+                <p class="form-hint top_30 bottom_0">Plea document status: <span id="pleaDocumentStatus">{{data['pleaDocumentStatus']}}</span></p>
+                <p class="form-hint bottom_0">Income document status: <span id="incomeDocumentStatus">{{data['incomeDocumentStatus']}}</span></p>
+                <p class="form-hint">Other document status: <span id="otherDocumentStatus">{{data['otherDocumentStatus']}}</span></p>
+            </div>
 
             <h1 id="uploadingHeader" class="heading-xlarge top_30 bottom_30">Uploading documents</h1>
             
             <div id="active">
-                <img id="iconRed" src="/public/images/alert-icon-black.svg" style="float: left; margin-right:10px"><img id="iconGreen" src="/public/images/alert-icon-green.svg" style="float: left; margin-right:10px; display:none"><h2 id="uploadingText" class="heading-medium top_30 bottom_15" style="vertical-align: middle"><span id="count">0</span> of <span id="numberOfFiles">3</span> files uploaded successfully</h2>
+                <img id="iconRed" src="/public/images/alert-icon-black.svg" style="float: left; margin-right:10px"><img id="iconGreen" src="/public/images/alert-icon-green.svg" style="float: left; margin-right:10px; display:none"><h2 id="uploadingText" class="heading-medium top_30 bottom_15" style="vertical-align: middle"><span id="count">0</span> of <span id="numberOfFiles">0</span> files uploaded successfully</h2>
             </div>
                         
             <div id="cancelled" style="display: none">
@@ -148,7 +178,7 @@
                 </thead>
                 <tbody>
                     
-                    <tr id="row1">
+                    <tr id="row1" style="display: none">
                         <th scope="row">{{data['plea-document']}}</th>
                         <td>PDF, 256KB, 3 pages</td>
                         <td id="progressBar1" colspan="2">
@@ -169,7 +199,7 @@
                         <td colspan="3" style="color: #B10E1E">Upload cancelled</td>
                     </tr>
                     
-                    <tr id="row2">
+                    <tr id="row2" style="display: none">
                         <th scope="row">{{data['income-document']}}</th>
                         <td>PDF, 256KB, 3 pages</td>
                         <td id="progressBar2" colspan="2">
@@ -190,7 +220,7 @@
                         <td colspan="3" style="color: #B10E1E">Upload cancelled</td>
                     </tr>
                     
-                    <tr id="row3">
+                    <tr id="row3" style="display: none">
                         <th scope="row">{{data['other-document']}}</th>
                         <td>PDF, 256KB, 3 pages</td>
                         <td id="progressBar3" colspan="2">
@@ -217,7 +247,7 @@
             <form id="greenButton" class="form" action="" method="post" style="display: none">
                 <div class="form-group">
                     <input class="button top_30" type="submit" value="Back to case">
-                    <div class="top_15"><a href="javascript:history.go(-1);">Upload more documents</a></div>
+                    <div class="top_15"><a href="upload-documents">Upload more documents</a></div>
                 </div>
             </form>
             <!--<p class="top_30"><a href="javascript:history.go(-1);">Go back to case</a></p>-->

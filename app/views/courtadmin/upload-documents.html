@@ -18,6 +18,10 @@
 
     window.onload = function() {
         
+        document.getElementById('pleaDocumentStatus').value = "off";
+        document.getElementById('incomeDocumentStatus').value = "off";
+        document.getElementById('otherDocumentStatus').value = "off";
+        
         // document.getElementById('addPleaDocumentButton').style.display = "none";
         // document.getElementById('addIncomeDocumentButton').style.display = "none";
         // document.getElementById('addOtherDocumentButton').style.display = "none";
@@ -36,6 +40,8 @@
             document.getElementById('plea-upload').style.display = "block";
             document.getElementById('mc100-upload').style.display = "none";
             document.getElementById('other-upload').style.display = "none";
+            document.getElementById('plea-document').value = "Plea document";
+            document.getElementById('pleaDocumentStatus').value = "on";
         }
         if (whichDoc == "income") {
             document.getElementById('addIncomeDocumentButton').style.display = "none";
@@ -43,12 +49,16 @@
             document.getElementById('plea-upload').style.display = "none";
             document.getElementById('mc100-upload').style.display = "block";
             document.getElementById('other-upload').style.display = "none";
+            document.getElementById('income-document').value = "MC100";
+            document.getElementById('incomeDocumentStatus').value = "on";
         }
         if (whichDoc == "other") {
             document.getElementById('otherDocumentGroup').style.display = "block";
             document.getElementById('plea-upload').style.display = "none";
             document.getElementById('mc100-upload').style.display = "none";
             document.getElementById('other-upload').style.display = "block";
+            document.getElementById('other-document').value = "Other document";
+            document.getElementById('otherDocumentStatus').value = "on";
         }
         document.getElementById('uploadDocumentsGroup').style.display = "block";
         document.getElementById("overlay2").style.display = "block";
@@ -58,8 +68,13 @@
         document.getElementById(whichOne).style.display = "none";
         if (whichOne == "pleaDocumentGroup") {
             document.getElementById('addPleaDocumentButton').style.display = "block";
+            document.getElementById('pleaDocumentStatus').value = "off";
+
         } else if (whichOne == "incomeDocumentGroup"){
             document.getElementById('addIncomeDocumentButton').style.display = "block";
+            document.getElementById('incomeDocumentStatus').value = "off";
+        } else if (whichOne == "otherDocumentGroup"){
+            document.getElementById('otherDocumentStatus').value = "off";
         }
     }
     
@@ -92,9 +107,9 @@
 
 <div id="overlay2" onclick="off()">
     <div id="overlay-info-2">
-        <img id="plea-upload" style="display:none" src="/public/images/upload-plea.png" onclick="filesAdded()">
-        <img id="mc100-upload" style="display:none" src="/public/images/upload-mc100.png" onclick="filesAdded()">
-        <img id="other-upload" style="display:none" src="/public/images/upload-other.png" onclick="filesAdded()">
+        <img id="plea-upload" style="display:none" src="/public/images/upload-plea.png">
+        <img id="mc100-upload" style="display:none" src="/public/images/upload-mc100.png">
+        <img id="other-upload" style="display:none" src="/public/images/upload-other.png">
     </div>
 </div>
 
@@ -113,6 +128,12 @@
         <div class="column-full">
 
             <form class="form" action="" method="post">
+                
+                <div style="display:none">
+                    <p class="form-hint bottom_0">Plea document status: <input class="form-control form-control-1-4" id="pleaDocumentStatus" type="text" name="pleaDocumentStatus" value="{{data['pleaDocumentStatus']}}"></p>
+                    <p class="form-hint bottom_0">Income document status: <input class="form-control form-control-1-4" id="incomeDocumentStatus" type="text" name="incomeDocumentStatus" value="{{data['incomeDocumentStatus']}}"></p>
+                    <p class="form-hint">Other document status: <input class="form-control form-control-1-4" id="otherDocumentStatus" type="text" name="otherDocumentStatus" value="{{data['otherDocumentStatus']}}"></p>
+                </div>
 
                 <h1 class="heading-xlarge top_0 bottom_30">Choose documents to upload</h1>
                 <p>If available you can upload any of the following:</p>

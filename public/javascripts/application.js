@@ -25,12 +25,18 @@ $(document).ready(function () {
     
     
     var count = 0;
-    var numberOfFilesAtStart = document.getElementById('numberOfFiles').innerText;
+    //var numberOfFilesAtStart = document.getElementById('numberOfFiles').innerText;
     var numberOfFilesCancelledAtStart = document.getElementById('count2').innerText;
     
-    $( "#progress-bar-1" ).animate({
-        width: "100%"
-    }, 6500, function() {
+    var pleaDocumentStatus = document.getElementById('pleaDocumentStatus').innerText;
+    var incomeDocumentStatus = document.getElementById('incomeDocumentStatus').innerText;
+    var otherDocumentStatus = document.getElementById('otherDocumentStatus').innerText;
+    
+    if (pleaDocumentStatus == "on") {
+        //window.console.info("Plea is on");
+        $( "#progress-bar-1" ).animate({
+            width: "100%"
+        }, 6500, function() {
         document.getElementById("progressBar1").style.display = "none";
         document.getElementById("uploadDate1").style.display = "table-cell";
         document.getElementById("uploadTime1").style.display = "table-cell";
@@ -40,18 +46,22 @@ $(document).ready(function () {
         document.getElementById("count").innerText = count;
         
         //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
-        
-        if (numberOfFilesAtStart == (count+count2)) {
+        //alert("numberOfFilesAtStart-count2="+(numberOfFilesAtStart-count2)+" ||| count="+count);
+
+        if ((numberOfFilesAtStart-count2) == count) {
             //window.location.href = "documents-successfully-uploaded";
             document.getElementById("uploadingHeader").innerText = "Document uploads complete";
             document.getElementById("greenButton").style.display = "block";
         }
 
     });
+    }
 
-    $( "#progress-bar-2" ).animate({
-        width: "100%"
-    }, 5000, function() {
+     if (incomeDocumentStatus == "on") {
+        //window.console.info("Income is on");
+       $( "#progress-bar-2" ).animate({
+            width: "100%"
+        }, 5000, function() {
         document.getElementById("progressBar2").style.display = "none";
         document.getElementById("uploadDate2").style.display = "table-cell";
         document.getElementById("uploadTime2").style.display = "table-cell";
@@ -61,18 +71,22 @@ $(document).ready(function () {
         document.getElementById("count").innerText = count;
         
         //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
-        
-        if (numberOfFilesAtStart == (count+count2)) {
+        //alert("numberOfFilesAtStart-count2="+(numberOfFilesAtStart-count2)+" ||| count="+count);
+           
+        if ((numberOfFilesAtStart-count2) == count) {
             //window.location.href = "documents-successfully-uploaded";
             document.getElementById("uploadingHeader").innerText = "Document uploads complete";
             document.getElementById("greenButton").style.display = "block";
         }
 
     });
+     }
 
-    $( "#progress-bar-3" ).animate({
-        width: "100%",
-    }, 8000, function() {
+    if (otherDocumentStatus == "on") {
+        //window.console.info("Other is on");
+        $( "#progress-bar-3" ).animate({
+            width: "100%",
+        }, 8000, function() {
         document.getElementById("progressBar3").style.display = "none";
         document.getElementById("uploadDate3").style.display = "table-cell";
         document.getElementById("uploadTime3").style.display = "table-cell";
@@ -82,14 +96,16 @@ $(document).ready(function () {
         document.getElementById("count").innerText = count;
         
         //alert("numberOfFilesAtStart="+numberOfFilesAtStart+"  |||  count="+count+"  |||  count2="+count2+"  |||  count+count2="+(count+count2));
-        
-        if (numberOfFilesAtStart == (count+count2)) {
+        //alert("numberOfFilesAtStart-count2="+(numberOfFilesAtStart-count2)+" ||| count="+count);
+
+        if ((numberOfFilesAtStart-count2) == count) {
             //window.location.href = "documents-successfully-uploaded";
             document.getElementById("uploadingHeader").innerText = "Document uploads complete";
             document.getElementById("greenButton").style.display = "block";
         }
 
     });
+    }
         
     $("#row1cancel").click(function(){
         $("#progress-bar-1").stop();

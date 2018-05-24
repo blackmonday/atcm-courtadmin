@@ -57,6 +57,10 @@ router.post('/', function (req, res) {
     req.session.data['plea-document'] = ""
     req.session.data['income-document'] = ""
     req.session.data['other-document'] = ""
+    
+    req.session.data['pleaDocumentStatus'] = "off"
+    req.session.data['incomeDocumentStatus'] = "off"
+    req.session.data['otherDocumentStatus'] = "off"
 
     // ************************************
     //CASE DETAILS 2 - TRANSPORT FOR LONDON
