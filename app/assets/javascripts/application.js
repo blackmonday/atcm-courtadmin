@@ -169,6 +169,25 @@ function tabGroup(tableObj, which) {
     } 
 }
 
+function tab2Group(tableObj, which2) {
+
+    tabE = 'TAB-FIVE';
+    tabF = 'TAB-SIX';
+    
+    if(which2 == tabE) {
+        document.getElementById("tabE").className = "tab-on";
+        document.getElementById("tabF").className = "tab";
+        document.getElementById("tabFiveContent").style.display = "block";
+        document.getElementById("tabSixContent").style.display = "none";
+    } else if(which2 == tabF) {
+        document.getElementById("tabE").className = "tab";
+        document.getElementById("tabF").className = "tab-on";
+        document.getElementById("tabFiveContent").style.display = "none";
+        document.getElementById("tabSixContent").style.display = "block";
+    }
+
+}
+
 
 
 

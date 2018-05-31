@@ -230,11 +230,11 @@ $path: "/public/images/";
     pointer-events: none;
     cursor: default;
 }
-.tabGroup hr {
+.tabGroup hr, .tab2Group hr {
     background: #BFC1C3;
     margin-top: -1px;
 }
-#tabTwoContent, #tabThreeContent, #tabFourContent {
+#tabTwoContent, #tabThreeContent, #tabFourContent, #tabSixContent {
     display: none;
 }
 
