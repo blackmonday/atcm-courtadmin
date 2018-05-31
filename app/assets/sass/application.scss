@@ -417,7 +417,7 @@ tr {
 
 
 // Dummy link
-.dummy-link {
+.dummy-link, #fakeLink {
     text-decoration: underline;
     color:#005EA5;
 }
@@ -426,7 +426,7 @@ tr {
     text-decoration: underline;
     color:#005EA5;
 }
-.dummy-link-2:hover {
+.dummy-link-2:hover, #fakeLink:hover {
     text-decoration: underline;
     color:#2B8CC4;
     cursor: pointer;
