@@ -10,13 +10,15 @@
 </style>
 
 <script>
-    window.onload = function() {
-    }
-    
     function casesFound() {
         document.getElementById('casesFound').style.display = "block";
+        document.getElementById('create1').style.display = "none";
+        document.getElementById('create2').style.display = "block";
+        document.getElementById('createButton').style.marginBottom = "0";
     }
 </script>
+
+{% include "includes/timeout-overlay.html" %}
 
 <main id="content" role="main">
     
@@ -95,21 +97,24 @@
                     </div>
 
                     <div class="form-group">
-                        <input class="button top_15" type="submit" value="create" onclick="javasript:casesFound()">
-                        <!--<div class="top_15"><a href="javascript:history.go(-1);">Cancel</a></div>-->
+                        <!--<input class="button top_15" type="submit" value="Create" onclick="javascript:casesFound()">-->
+                        
+                        <div id="createButton" class="button top_0 bottom_15" onclick="javascript:casesFound()">Create</div>
+                        <div id="create1" class="top_0"><a href="javascript:history.go(-1);">Cancel and return to dashboard</a></div>
+
                     </div>
                     
                 </form>
                 
-                <div id="casesFound" style="display:none">
+                <div id="casesFound" class="top_0" style="display:none">
                     <div class="panel panel-border-wide">
                         <p>2 cases found</p>
                     </div>
 
-                    <input class="button-secondary top_15" type="submit" value="Download register in spreadsheet">
+                    <input class="button-secondary top_15 bottom_15" type="submit" value="Download register in spreadsheet">
                 </div>
                 
-                <div class="top_15"><a href="javascript:history.go(-1);">Cancel and return to dashboard</a></div>
+                <div id="create2" class="top_0" style="display:none"><a href="javascript:history.go(-1);">Cancel and return to dashboard</a></div>
 
             </div>
         </div>
