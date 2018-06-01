@@ -18,6 +18,7 @@ router.post('/', function (req, res) {
     //CASE DETAILS 1 - TRANSPORT FOR LONDON
     req.session.data['case-reference-number'] = "9012466"
     req.session.data['case-status'] = "No plea received"
+    req.session.data['plea-group'] = "No plea received"
     req.session.data['prosecutor'] = "Transport for London"
     req.session.data['notice-served'] = "28 February 2018"
     req.session.data['notice-served-short'] = "28 Feb 2018"
@@ -142,7 +143,7 @@ router.post('/courtadmin/documents-successfully-uploaded', function (req, res) {
 // BILLY SMITH
 router.post('/courtadmin/case-details', function (req, res) {
 
-    res.redirect('/courtadmin/add-or-change-personal-details')
+    //res.redirect('/courtadmin/add-or-change-personal-details')
     
 })
 router.post('/courtadmin/billy-smith-2', function (req, res) {

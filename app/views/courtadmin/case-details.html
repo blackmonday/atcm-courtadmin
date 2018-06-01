@@ -198,7 +198,7 @@
     }
 </script>
 
-{% include "includes/timeout-overlay.html" %}
+<!--{% include "includes/timeout-overlay.html" %}-->
 
 x<div id="overlay-file-1" onclick="overlay_file_1_off()">
     <div id="overlay-info">
@@ -317,7 +317,7 @@ x<div id="overlay-file-1" onclick="overlay_file_1_off()">
             <p class="form-hint bottom_0">{{data['defendant-dob-day']}} <span id="month">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</p>
             <p class="form-hint"><span id="defendantAddressLine1">{{data['defendant-address-line-1']}}, </span><span id="defendantAddressLine2">{{data['defendant-address-line-2']}}, </span><span id="defendantAddressLine3">{{data['defendant-address-line-3']}}, </span><span id="defendantAddressCity">{{data['defendant-address-city']}}, </span><span id="defendantAddressPostcode">{{data['defendant-address-postcode']}}</span></p>
             
-            <form class="form" action="" method="post">
+            <form class="form" action="/courtadmin/add-or-change-personal-details" method="post">
                 <input class="button" type="submit" value="Add all details from postal reply">
             </form>
             
@@ -335,7 +335,7 @@ x<div id="overlay-file-1" onclick="overlay_file_1_off()">
                 </div>
             </div>
 
-           <div class="tabGroup top_30">
+            <div class="tabGroup top_30">
                 <a id="tabA" class="tab-on" onclick="tabGroup(tabContent, 'TAB-ONE')" href="javascript: void(0)">Case details</a>
                 <a id="tabB" class="tab" onclick="tabGroup(tabContent, 'TAB-TWO')" href="javascript: void(0)">Defendant details</a>
                 <a id="tabD" class="tab" onclick="tabGroup(tabContent, 'TAB-FOUR')" href="javascript: void(0)">Income</a>
@@ -512,10 +512,131 @@ x<div id="overlay-file-1" onclick="overlay_file_1_off()">
                 <span class="label">{{data['case-status']}}</span>
             </div>
             
-            <hr class="top_60 bottom_60">
+            <!--<hr class="top_60 bottom_60">-->
 
-            <h3 class="heading-medium bottom_5">Statement of facts</h3>
-            <p>{{data['statement-of-facts']}}</p>
+            <div class="tab2Group top_30">
+                <a id="tabE" class="tab-on" onclick="tab2Group(tab2Content, 'TAB-FIVE')" href="javascript: void(0)">Details</a>
+                <a id="tabF" class="tab" onclick="tab2Group(tab2Content, 'TAB-SIX')" href="javascript: void(0)">Add or change plea</a>
+                <hr>
+            </div>
+            <div id="tab2Content" class="top_30">
+                <div id="tabFiveContent">
+                    <h3 class="heading-medium top_0 bottom_5">Statement of facts</h3>
+                    <p>{{data['statement-of-facts']}}</p>
+                </div>
+                
+                <div id="tabSixContent">
+                    
+                    <h3 class="heading-medium top_0 bottom_30">Select defendant's plea</h3>
+                    
+                    <div class="notice bottom_30">
+                        <i class="icon icon-important">
+                            <span class="visually-hidden">Warning</span>
+                        </i>
+                        <strong class="bold-small">
+                            Adding or changing a plea will make the case ready for decision and you may not be able to make further changes. If you have other details to enter on this case, do this first.
+                        </strong>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <form class="form" action="" method="post">
+                        <div class="form-group">
+
+                            <fieldset>
+
+                                <div class="multiple-choice">
+                                    <input id="radio-1" type="radio" name="plea-group" value="No plea received" {{ checked('plea-group','No plea received') }}>
+                                    <label for="radio-1">No plea received</label>
+                                </div>
+
+                                <div class="multiple-choice">
+                                    <input id="radio-2" type="radio" name="plea-group" value="Guilty - I don't want to come to court" {{ checked("plea-group","Guilty - I don't want to come to court") }}>
+                                    <label for="radio-2">Guilty - I don't want to come to court</label>
+                                </div>
+
+                                <div class="multiple-choice" data-target="guilty-interpreter">
+                                    <input id="radio-3" type="radio" name="plea-group" value="Guilty - I want to come to court" {{ checked('plea-group','Guilty - I want to come to court') }}>
+                                    <label for="radio-3">Guilty - I want to come to court</label>
+                                </div>
+                                        <fieldset class="inline">
+                                            <div class="panel panel-border-narrow js-hidden" id="guilty-interpreter" style="padding-top:0; margin-top: 5px; margin-bottom:15px">
+                                                <label class="form-label" for="contact-email">Does the defendant need an interpreter?</label>
+                                                <div class="multiple-choice" data-target="guilty-interpreter-language">
+                                                    <input id="uilty-radio-1" type="radio" name="guilty-radio-group" value="Yes" {{ checked('guilty-radio-group','Yes') }}>
+                                                    <label for="guilty-radio-1">Yes</label>
+                                                </div>
+                                                <div class="multiple-choice">
+                                                    <input id="guilty-radio-2" type="radio" name="guilty-radio-group" value="No" {{ checked('guilty-radio-group','No') }}>
+                                                    <label for="guilty-radio-2">No</label>
+                                                </div>
+                                                <div class="panel panel-border-narrow js-hidden" id="guilty-interpreter-language"style="padding-top:0; margin-top: 15px;">
+                                                    <label class="form-label" for="guilty-language">Which language?</label>
+                                                    <input class="form-control" id="guilty-language" name="guilty-language" type="text" value="{{data['guilty-language']}}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+-->
+                                <div class="multiple-choice" data-target="not-guilty-interpreter">
+                                    <input id="radio-4" type="radio" name="plea-group" value="Not guilty - send me the date of my trial" {{ checked('plea-group','Not guilty - send me the date of my trial') }}>
+                                    <label for="radio-4">Not guilty - send me the date of my trial</label>
+                                </div>
+                                        <fieldset class="inline">
+                                            <div class="panel panel-border-narrow js-hidden" id="not-guilty-interpreter" style="padding-top:0; margin-top: 15px">
+                                                <label class="form-label" for="contact-email">Does the defendant need an interpreter?</label>
+                                                <div class="multiple-choice" data-target="not-guilty-interpreter-language">
+                                                    <input id="not-guilty-radio-1" type="radio" name="not-guilty-radio-group" value="Yes" {{ checked('not-guilty-radio-group','Yes') }}>
+                                                    <label for="not-guilty-radio-1">Yes</label>
+                                                </div>
+                                                <div class="multiple-choice">
+                                                    <input id="not-guilty-radio-2" type="radio" name="not-guilty-radio-group" value="No" {{ checked('not-guilty-radio-group','No') }}>
+                                                    <label for="not-guilty-radio-2">No</label>
+                                                </div>
+                                                <div class="panel panel-border-narrow js-hidden" id="not-guilty-interpreter-language"style="padding-top:0; margin-top: 15px">
+                                                    <label class="form-label" for="not-guilty-language">Which language?</label>
+                                                    <input class="form-control" id="not-guilty-language" name="not-guilty-language" type="text" value="{{data['not-guilty-language']}}">
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                            </fieldset>
+
+                            <fieldset>
+                                <div class="multiple-choice top_30">
+                                    <input id="plea-confirm" name="plea-confirm" type="checkbox" value="plea-confirm">
+                                    <label for="plea-confirm">Confirm all other details entered and you're ready to submit this plea</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="top_30">
+                                <button class="button disabled" type="submit">Save</button>
+                            </fieldset>
+
+                        </div>
+                    </form>
+                    
+                </div>
+           </div>            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
 
         </div>
         
