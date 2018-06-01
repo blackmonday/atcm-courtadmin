@@ -143,7 +143,10 @@ router.post('/courtadmin/documents-successfully-uploaded', function (req, res) {
 // BILLY SMITH
 router.post('/courtadmin/case-details', function (req, res) {
 
+    req.session.data['case-status'] = req.session.data['plea-group']
+    
     //res.redirect('/courtadmin/add-or-change-personal-details')
+    res.redirect('/courtadmin/case-details')
     
 })
 router.post('/courtadmin/billy-smith-2', function (req, res) {

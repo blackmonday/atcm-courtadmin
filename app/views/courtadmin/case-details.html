@@ -13,6 +13,7 @@
 </style>
 
 <script>
+    
     window.onload = function() {
                         
         var file2name = document.getElementById("file2name").innerText;
@@ -196,6 +197,12 @@
         }
         
     }
+    
+    function ticked() {        
+        var element = document.getElementById("pleaButton");
+        element.classList.remove("disabled");
+    }
+    
 </script>
 
 <!--{% include "includes/timeout-overlay.html" %}-->
@@ -608,13 +615,13 @@ x<div id="overlay-file-1" onclick="overlay_file_1_off()">
 
                             <fieldset>
                                 <div class="multiple-choice top_30">
-                                    <input id="plea-confirm" name="plea-confirm" type="checkbox" value="plea-confirm">
+                                    <input id="plea-confirm" name="plea-confirm" type="checkbox" value="plea-confirm" onclick="ticked()">
                                     <label for="plea-confirm">Confirm all other details entered and you're ready to submit this plea</label>
                                 </div>
                             </fieldset>
 
                             <fieldset class="top_30">
-                                <button class="button disabled" type="submit">Save</button>
+                                <button id="pleaButton" class="button disabled" type="submit">Save</button>
                             </fieldset>
 
                         </div>
