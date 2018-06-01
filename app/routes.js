@@ -143,7 +143,19 @@ router.post('/courtadmin/documents-successfully-uploaded', function (req, res) {
 // BILLY SMITH
 router.post('/courtadmin/case-details', function (req, res) {
 
-    req.session.data['case-status'] = req.session.data['plea-group']
+    var pleaGroup = req.session.data['plea-group']
+    
+    if (pleaGroup == "No plea received") {
+        req.session.data['case-status'] = "No plea received"
+    } else if (pleaGroup == "Guilty - I don't want to come to court") {
+        req.session.data['case-status'] = "Pleaded guilty SJP"
+    } else if (pleaGroup == "Guilty - I want to come to court") {
+        req.session.data['case-status'] = "Pleaded guilty - Court hearing requested"
+    } else if (pleaGroup == "Not guilty - send me the date of my trial") {
+        req.session.data['case-status'] = "Pleaded not guilty"
+    } 
+    
+    //req.session.data['case-status'] = req.session.data['plea-group']
     
     //res.redirect('/courtadmin/add-or-change-personal-details')
     res.redirect('/courtadmin/case-details')
