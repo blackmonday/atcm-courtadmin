@@ -89,9 +89,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th scope="col" style="width:175px">Name</th>
-                        <th scope="col">Case reference number</th>
-                        <th scope="col">Case status</th>
+                        <th scope="col" style="width:150px">Name</th>
+                        <th scope="col" style="width:100px">Case reference number</th>
+                        <th scope="col" style="width:175px">Case status</th>
                         <th scope="col">Date of birth</th>
                         <th scope="col">Prosecutor</th>
                         <th scope="col">Notice served</th>
@@ -101,7 +101,8 @@
                     <tr>
                         <th scope="row"><img src="/public/images/alert-icon-black.svg" style="vertical-align: middle; padding-right:10px; height:24px"><a href="case-details.html"><span class="last-name">{{data['defendant-last-name']}}</span> {{data['defendant-first-name']}}</a></th>
                         <td>{{data['case-reference-number']}}</td>
-                        <td>{{data['case-status']}}</td>
+                        <td>{{data['case-status']}}<br>
+                        <a href="upload-documents.html">Upload documents</a></td>
                         <td>{{data['defendant-dob-day']}} <span id="month" style="display:none">{{data['defendant-dob-month']}}</span><span id="monthShort">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}}</td>
                         <td>{{data['prosecutor']}}</td>
                         <td>{{data['notice-served-short']}}</td>
