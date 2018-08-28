@@ -99,7 +99,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row"><img src="/public/images/alert-icon-black.svg" style="vertical-align: middle; padding-right:10px; height:24px"><a href="case-details.html"><span class="last-name">{{data['defendant-last-name']}}</span> {{data['defendant-first-name']}}</a></th>
+                        <th scope="row" class="last-name">{{data['defendant-last-name']}}</span> {{data['defendant-first-name']}}</a></th>
                         <td>{{data['case-reference-number']}}</td>
                         <td>{{data['case-status']}}<br>
                         <a href="upload-documents.html">Upload documents</a></td>
@@ -108,6 +108,22 @@
                         <td>{{data['notice-served-short']}}</td>
                     </tr>
                     <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">{{data['defendant-last-name-2']}}</span> {{data['defendant-first-name-2']}}</th>
+                        <td>{{data['case-reference-number-2']}}</td>
+                        <td>{{data['case-status-2']}}</td>
+                        <td>{{data['defendant-dob-day-2']}} <span id="month" style="display:none">{{data['defendant-dob-month-2']}}</span><span id="monthShort-2">{{data['defendant-dob-month-2']}}</span> {{data['defendant-dob-year-2']}}</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>{{data['notice-served-short-2']}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">{{data['defendant-last-name-2']}}</span> {{data['defendant-first-name-2']}}</th>
+                        <td>{{data['case-reference-number-2']}}</td>
+                        <td>{{data['case-status-2']}}</td>
+                        <td>{{data['defendant-dob-day-2']}} <span id="month" style="display:none">{{data['defendant-dob-month-2']}}</span><span id="monthShort-2">{{data['defendant-dob-month-2']}}</span> {{data['defendant-dob-year-2']}}</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>{{data['notice-served-short-2']}}</td>
+                    </tr>
+                        <tr>
                         <th scope="row" class="dummy-link"><span class="last-name">{{data['defendant-last-name-2']}}</span> {{data['defendant-first-name-2']}}</th>
                         <td>{{data['case-reference-number-2']}}</td>
                         <td>{{data['case-status-2']}}</td>
