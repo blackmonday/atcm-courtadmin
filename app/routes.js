@@ -31,27 +31,27 @@ router.post('/', function (req, res) {
     req.session.data['defendant-dob-year'] = "1970"    
     req.session.data['defendant-age'] = 2018-req.session.data['defendant-dob-year']   
     req.session.data['defendant-address-line-1'] = "7 Rock Road"    
-    req.session.data['defendant-address-line-2'] = ""    
+    req.session.data['defendant-address-line-2'] = "Hammersmith"    
     req.session.data['defendant-address-line-3'] = ""    
     req.session.data['defendant-address-city'] = "London"    
     req.session.data['defendant-address-postcode'] = "SE3 8YH"  
-    req.session.data['defendant-email'] = "billy_s765@gmail.com"  
+    req.session.data['defendant-email'] = ""  
     req.session.data['defendant-telephone'] = ""  
-    req.session.data['defendant-mobile'] = "07975337198"
+    req.session.data['defendant-mobile'] = ""
     
-    req.session.data['defendant-nin'] = "VO 12 34 56 D"
-    req.session.data['defendant-net-income'] = "1000"
-    req.session.data['defendant-income-frequency-group'] = "Monthly"
-    req.session.data['defendant-employment-status-group'] = "Employed (full or part-time)"
-    req.session.data['defendant-claiming-benefits-group'] = "No"
+    req.session.data['defendant-nin'] = ""
+    req.session.data['defendant-net-income'] = ""
+    req.session.data['defendant-income-frequency-group'] = ""
+    req.session.data['defendant-employment-status-group'] = ""
+    req.session.data['defendant-claiming-benefits-group'] = ""
     
-    req.session.data['defendant-plea'] = "Not guilty"
-    req.session.data['defendant-mitigation'] = "Lorem ipsum dolor sit amet"
+    req.session.data['defendant-plea'] = "Not plea received"
+    req.session.data['defendant-mitigation'] = "N/A"
     
     req.session.data['offence-title'] = "Passenger used ticket issued for another person"
-    req.session.data['offence-description'] = "On 10/06/2014 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take."
+    req.session.data['offence-description'] = "On 10/11/2017 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take."
     
-    req.session.data['statement-of-facts'] = "I, Inspector Morse, was suspicious as the defendant kept moving seats away from me. When asked for a ticket he replied “I don’t have one as I am not really on this train, you’re seeing an illusion”. I had no choice but to issue him with a ticket."
+    req.session.data['statement-of-facts'] = "On Thursday 10th November 2017 you were on board a route 178 bus, garage code 552 with the intention of travelling from LEWISHAM to BLACKHEATH, a normal adult fare of £2.40. During the course of this journey at about 4:15 PM you offered for the inspection of London Bus Inspector LB004512 a £3.60 Discount SINGLE Pay as you go pass in oystercard format, serial number 02871229561, which had been issued to another person on terms that it was not transferable and was therefore not valid for travel by you. When questioned, you said “It’s my wife’s”. When informed that you were being reported you said “It’s not fair, nobody told me I couldn’t use someone else’s oystercard.."
         
     req.session.data['case-notes'] = "No case notes have been added."
     
