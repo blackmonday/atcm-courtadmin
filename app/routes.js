@@ -46,7 +46,7 @@ router.post('/', function (req, res) {
     req.session.data['defendant-claiming-benefits-group'] = ""
     
     req.session.data['defendant-plea'] = "Not plea received"
-    req.session.data['defendant-mitigation'] = "N/A"
+    req.session.data['defendant-mitigation'] = ""
     
     req.session.data['offence-title'] = "Passenger used ticket issued for another person"
     req.session.data['offence-description'] = "On 10/11/2017 At grosvenor place SW1 Being a passenger on a Public Service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not immediately on boarding pay the fare to the Driver for the journey you intended to take."
