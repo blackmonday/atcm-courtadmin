@@ -27,7 +27,6 @@
 
         document.getElementById('monthShort').innerText = monthsShort[monthShort];
         document.getElementById('monthShort-2').innerText = monthsShort[monthShort2];
-
     }
     
 </script>
@@ -71,7 +70,7 @@
 
             <div class="panel panel-border-wide top_15 bottom_0" style="padding-top: 10px; padding-bottom: 5px">
                 <p>
-                    2 cases found
+                    8 cases found
                 </p>
             </div>
             <div class="panel panel-border-wide top_0" style="padding-top: 10px; padding-bottom: 5px">
@@ -99,6 +98,23 @@
                 </thead>
                 <tbody>
                     <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> Abigail</th>
+                        <td>9012473</td>
+                        <td>No plea received<br>
+                        <span class="dummy-link">Upload documents</span></td>
+                        <td>24 May 1960</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>28 March 2018</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> Barry</th>
+                        <td>9012473</td>
+                        <td>Completed</td>
+                        <td>16 March 2018</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>12 August 2018</td>
+                    </tr>
+                    <tr>
                         <th scope="row"><img src="/public/images/alert-icon-black.svg" style="vertical-align: middle; padding-right:10px; height:24px"><a href="case-details.html"><span class="last-name">{{data['defendant-last-name']}}</span> {{data['defendant-first-name']}}</a></th>
                         <td>{{data['case-reference-number']}}</td>
                         <td>{{data['case-status']}}<br>
@@ -114,6 +130,40 @@
                         <td>{{data['defendant-dob-day-2']}} <span id="month" style="display:none">{{data['defendant-dob-month-2']}}</span><span id="monthShort-2">{{data['defendant-dob-month-2']}}</span> {{data['defendant-dob-year-2']}}</td>
                         <td>{{data['prosecutor']}}</td>
                         <td>{{data['notice-served-short-2']}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> Justin</th>
+                        <td>9011534</td>
+                        <td>No plea received<br>
+                        <span class="dummy-link">Upload documents</span></td>
+                        <td>29 July 2018</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>20 March 2018</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> Marlin</th>
+                        <td>9024536</td>
+                        <td>Completed</td>
+                        <td>1 July 1989</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>29 July 2018</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> Penelope</th>
+                        <td>9011738</td>
+                        <td>Completed</td>
+                        <td>23 May 1970</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>14 March 2018</td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="dummy-link"><span class="last-name">Smith</span> William</th>
+                        <td>9012473</td>
+                        <td>No plea received<br>
+                        <span class="dummy-link">Upload documents</span></td>
+                        <td>6 December 1969</td>
+                        <td>{{data['prosecutor']}}</td>
+                        <td>16 April 2018</td>
                     </tr>
                 </tbody>
             </table>
