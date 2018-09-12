@@ -103,7 +103,9 @@ router.post('/', function (req, res) {
     
     req.session.data['case-notes-2'] = "No case notes have been added."
 
-    res.redirect('/courtadmin/sign-in')
+    //res.redirect('/courtadmin/sign-in')
+    res.redirect('/courtadmin/dashboard')
+    
     
 })
 
