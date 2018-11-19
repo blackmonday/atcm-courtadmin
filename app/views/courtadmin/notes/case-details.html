@@ -313,15 +313,20 @@
         <div class="column-full">
             {% include "includes/phase_banner_alpha.html" %}
             {% include "includes/breadcrumb_back.html" %}
-            {% include "includes/persist-info-banner.html" %}
+            <!--{% include "includes/persist-info-banner.html" %}-->
+            <div class="peristant-info-banner">
+                <div class="peristant-info-banner-content">9012473 &nbsp; <span class="bold">William <span class="last-name">Smith</span></span></div>
+            </div>
         </div>
     </div>
 
     <div class="grid-row top_30">
         <div class="column-two-thirds">
 
-            <h1 class="heading-xlarge top_0 bottom_5">{{data['defendant-first-name']}} <span class="last-name">{{data['defendant-last-name']}}</span></h1>
-            <p class="form-hint bottom_0">{{data['defendant-dob-day']}} <span id="month">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</p>
+            <!--<h1 class="heading-xlarge top_0 bottom_5">{{data['defendant-first-name']}} <span class="last-name">{{data['defendant-last-name']}}</span></h1>-->
+            <h1 class="heading-xlarge top_0 bottom_5">William <span class="last-name">Smith</span></h1>
+            <!--<p class="form-hint bottom_0">{{data['defendant-dob-day']}} <span id="month">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</p>-->
+            <p class="form-hint bottom_0">6 December 1969</p>            
             <p class="form-hint"><span id="defendantAddressLine1">{{data['defendant-address-line-1']}}, </span><span id="defendantAddressLine2">{{data['defendant-address-line-2']}}, </span><span id="defendantAddressLine3">{{data['defendant-address-line-3']}}, </span><span id="defendantAddressCity">{{data['defendant-address-city']}}, </span><span id="defendantAddressPostcode">{{data['defendant-address-postcode']}}</span></p>
             
             <form class="form" action="/courtadmin/add-or-change-personal-details" method="post">
@@ -372,11 +377,13 @@
                     <table class="top_10">
                         <tr>
                             <th class="bold" style="border: none">Name</th>
-                            <td style="border: none"><span id="defendantTitle">{{data['defendant-title']}} </span>{{data['defendant-first-name']}} {{data['defendant-last-name']}}</td>
+                            <!--<td style="border: none"><span id="defendantTitle">{{data['defendant-title']}} </span>{{data['defendant-first-name']}} {{data['defendant-last-name']}}</td>-->
+                            <td style="border: none"><span id="defendantTitle">{{data['defendant-title']}} </span>William Smith</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Date of birth</th>
-                            <td style="border: none">{{data['defendant-dob-day']}} <span id="month-2">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</td>
+                            <!--<td style="border: none">{{data['defendant-dob-day']}} <span id="month-2">{{data['defendant-dob-month']}}</span> {{data['defendant-dob-year']}} ({{data['defendant-age']}} years old)</td>-->
+                            <td style="border: none">6 December 1969 (49 years old)</td>
                         </tr>
                         <tr>
                             <th class="bold" style="border: none">Address</th>
