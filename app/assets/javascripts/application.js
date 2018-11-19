@@ -115,9 +115,8 @@ $(document).ready(function () {
     });
     $("#row3cancel").click(function(){
         $("#progress-bar-3").stop();
-    });
-
-
+    });    
+    
 })
 
 
@@ -173,17 +172,29 @@ function tab2Group(tableObj, which2) {
 
     tabE = 'TAB-FIVE';
     tabF = 'TAB-SIX';
+    tabG = 'TAB-SEVEN';
     
     if(which2 == tabE) {
         document.getElementById("tabE").className = "tab-on";
         document.getElementById("tabF").className = "tab";
+        document.getElementById("tabG").className = "tab";
         document.getElementById("tabFiveContent").style.display = "block";
         document.getElementById("tabSixContent").style.display = "none";
+        document.getElementById("tabSevenContent").style.display = "none";
     } else if(which2 == tabF) {
         document.getElementById("tabE").className = "tab";
         document.getElementById("tabF").className = "tab-on";
+        document.getElementById("tabG").className = "tab";
         document.getElementById("tabFiveContent").style.display = "none";
         document.getElementById("tabSixContent").style.display = "block";
+        document.getElementById("tabSevenContent").style.display = "none";
+    } else if(which2 == tabG) {
+        document.getElementById("tabE").className = "tab";
+        document.getElementById("tabF").className = "tab";
+        document.getElementById("tabG").className = "tab-on";
+        document.getElementById("tabFiveContent").style.display = "none";
+        document.getElementById("tabSixContent").style.display = "none";
+        document.getElementById("tabSevenContent").style.display = "block";
     }
 
 }
@@ -298,3 +309,9 @@ function off4() {
     document.getElementById("overlay4").style.display = "none";
 }
 */
+
+
+
+
+
+

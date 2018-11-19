@@ -234,7 +234,7 @@ $path: "/public/images/";
     background: #BFC1C3;
     margin-top: -1px;
 }
-#tabTwoContent, #tabThreeContent, #tabFourContent, #tabSixContent {
+#tabTwoContent, #tabThreeContent, #tabFourContent, #tabSixContent, #tabSevenContent {
     display: none;
 }
 
@@ -542,4 +542,12 @@ tr {
 /* TABLE HEADER ROW ALIGNMENT */
 thead tr {
      vertical-align: bottom;
+}
+
+
+/* Character count pattern */
+#character_count {
+    color: #6F777B;
+    margin-top: 10px;
+    text-align: right;
 }
