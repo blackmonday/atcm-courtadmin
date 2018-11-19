@@ -536,6 +536,26 @@
             
             
             
+            
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+            
+            <script type="text/javascript">
+                function updateNoteText() {
+                    var userInput = document.getElementById('notesTextArea').value;
+                    document.getElementById('noteText').innerHTML = userInput;
+                    document.getElementById('noteTextBlock').style.display =  "block";
+                }; 
+            </script>
+            
             <div class="tab2Group top_30">
                 <a id="tabE" class="tab-on" onclick="tab2Group(tab2Content, 'TAB-FIVE')" href="javascript: void(0)">Details</a>
                 <a id="tabF" class="tab" onclick="tab2Group(tab2Content, 'TAB-SIX')" href="javascript: void(0)">Add or change plea</a>
@@ -646,6 +666,14 @@
                 </div>
                 
                 <div id="tabSevenContent">
+                    
+                    <div id="noteTextBlock" style="display:none">
+                        
+                        <p class="bold bottom_0">26 October 2018 at 13:33</p>
+                        <p class="form-hint top_0 bottom_0">Court administrator: Jane Bloggs</p>
+                        <p id="noteText" class="">xxx</p>
+                        <hr>
+                    </div>
 
                     <label class="form-label" for="textarea">
                         <span class="heading-small">Add a note</span>
@@ -653,7 +681,7 @@
                     <textarea class="form-control form-control-3-4" name="notesTextArea" id="notesTextArea" rows="5"></textarea>
 
                     <div class="top_15">
-                        <input class="button-secondary" type="submit" value="Save note" >
+                        <input class="button-secondary" type="submit" value="Save note" onclick="updateNoteText()" >
                     </div>           
                 </div>
            </div>            
