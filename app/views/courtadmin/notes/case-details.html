@@ -549,10 +549,19 @@
             
             
             <script type="text/javascript">
-                function updateNoteText() {
-                    var userInput = document.getElementById('notesTextArea').value;
-                    document.getElementById('noteText').innerHTML = userInput;
-                    document.getElementById('noteTextBlock').style.display =  "block";
+                function updateNoteText1() {
+                    var userInput = document.getElementById('notesTextArea1').value;
+                    document.getElementById('noteText1').innerHTML = userInput;
+                    document.getElementById('noteTextBlock1').style.display =  "block";
+                    document.getElementById('addNote1').style.display =  "none";
+                    document.getElementById('addNote2').style.display =  "block";
+                }; 
+                function updateNoteText2() {
+                    var userInput = document.getElementById('notesTextArea2').value;
+                    document.getElementById('noteText2').innerHTML = userInput;
+                    document.getElementById('noteTextBlock2').style.display =  "block";
+                    document.getElementById('addNote1').style.display =  "none";
+                    document.getElementById('addNote2').style.display =  "block";
                 }; 
             </script>
             
@@ -667,22 +676,43 @@
                 
                 <div id="tabSevenContent">
                     
-                    <div id="noteTextBlock" style="display:none">
+                    <div id="noteTextBlock1" style="display:none">
                         
-                        <p class="bold bottom_0">26 October 2018 at 13:33</p>
+                        <p class="bold bottom_0">26 October 2018 at 10:33</p>
                         <p class="form-hint top_0 bottom_0">Court administrator: Jane Bloggs</p>
-                        <p id="noteText" class="">xxx</p>
+                        <p id="noteText1" class=""></p>
                         <hr>
                     </div>
 
-                    <label class="form-label" for="textarea">
-                        <span class="heading-small">Add a note</span>
-                    </label>
-                    <textarea class="form-control form-control-3-4" name="notesTextArea" id="notesTextArea" rows="5"></textarea>
+                    <div id="noteTextBlock2" style="display:none">
+                        
+                        <p class="bold bottom_0">26 October 2018 at 14:08</p>
+                        <p class="form-hint top_0 bottom_0">Court administrator: Jane Bloggs</p>
+                        <p id="noteText2" class=""></p>
+                        <hr>
+                    </div>
 
-                    <div class="top_15">
-                        <input class="button-secondary" type="submit" value="Save note" onclick="updateNoteText()" >
-                    </div>           
+                    <div id="addNote1">
+                        <label class="form-label" for="textarea">
+                            <span class="heading-small">Add a note</span>
+                        </label>
+                        <textarea class="form-control form-control-3-4" name="notesTextArea1" id="notesTextArea1" rows="5"></textarea>
+
+                        <div class="top_15">
+                            <input class="button-secondary" type="submit" value="Save note" onclick="updateNoteText1()" >
+                        </div>           
+                    </div>
+
+                    <div id="addNote2" style="display: none">
+                        <label class="form-label" for="textarea2">
+                            <span class="heading-small">Add a note</span>
+                        </label>
+                        <textarea class="form-control form-control-3-4" name="notesTextArea2" id="notesTextArea2" rows="5"></textarea>
+
+                        <div class="top_15">
+                            <input class="button-secondary" type="submit" value="Save note" onclick="updateNoteText2()" >
+                        </div>           
+                    </div>
                 </div>
            </div>            
 
