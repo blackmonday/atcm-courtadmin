@@ -314,9 +314,55 @@
             {% include "includes/phase_banner_alpha.html" %}
             {% include "includes/breadcrumb_back.html" %}
             <!--{% include "includes/persist-info-banner.html" %}-->
+            
             <div class="peristant-info-banner">
                 <div class="peristant-info-banner-content">9012473 &nbsp; <span class="bold">William <span class="last-name">Smith</span></span></div>
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <script>
+                function goToNotes() {
+                    document.getElementById("tabE").className = "tab";
+                    document.getElementById("tabF").className = "tab";
+                    document.getElementById("tabG").className = "tab-on";
+                    document.getElementById("tabFiveContent").style.display = "none";
+                    document.getElementById("tabSixContent").style.display = "none";
+                    document.getElementById("tabSevenContent").style.display = "block";
+                    document.getElementById("notesWarning").style.display = "none";
+                }
+            </script>
+
+            <div id="notesWarning" class="notice top_30">
+                <i class="icon icon-important" style="width:26px; height:26px; margin-right:0; margin-top:-15px">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small" style="padding-left:50px">
+                    There is a <a href="#notes" onclick="goToNotes()">new note</a> for this case
+                </strong>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         </div>
     </div>
 
@@ -519,6 +565,7 @@
             <h3 class="heading-medium bottom_5">{{data['offence-title']}}</h3>
             <p>{{data['offence-description']}}</p>
             
+            <a id="notes"></a>
             <div class="top_60 bottom_60">
                 <span class="label">{{data['case-status']}}</span>
             </div>
@@ -676,8 +723,14 @@
                 
                 <div id="tabSevenContent">
                     
+                    <div>
+                        <p class="bold bottom_0">25 October 2018 at 13:47</p>
+                        <p class="form-hint top_0 bottom_0">Court administrator: Alan Jones</p>
+                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <hr>
+                    </div>
+
                     <div id="noteTextBlock1" style="display:none">
-                        
                         <p class="bold bottom_0">26 October 2018 at 10:33</p>
                         <p class="form-hint top_0 bottom_0">Court administrator: Jane Bloggs</p>
                         <p id="noteText1" class=""></p>
@@ -685,7 +738,6 @@
                     </div>
 
                     <div id="noteTextBlock2" style="display:none">
-                        
                         <p class="bold bottom_0">26 October 2018 at 14:08</p>
                         <p class="form-hint top_0 bottom_0">Court administrator: Jane Bloggs</p>
                         <p id="noteText2" class=""></p>
