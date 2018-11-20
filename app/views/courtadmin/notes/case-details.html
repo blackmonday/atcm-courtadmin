@@ -596,6 +596,7 @@
             
             
             <script type="text/javascript">
+                
                 function updateNoteText1() {
                     var userInput = document.getElementById('notesTextArea1').value;
                     document.getElementById('noteText1').innerHTML = userInput;
@@ -610,12 +611,20 @@
                     document.getElementById('addNote1').style.display =  "none";
                     document.getElementById('addNote2').style.display =  "block";
                 }; 
+                
             </script>
+            
+            <script>
+                function hideNotesWarning() {
+                    document.getElementById("notesWarning").style.display = "none";
+                }
+            </script>
+
             
             <div class="tab2Group top_30">
                 <a id="tabE" class="tab-on" onclick="tab2Group(tab2Content, 'TAB-FIVE')" href="javascript: void(0)">Details</a>
                 <a id="tabF" class="tab" onclick="tab2Group(tab2Content, 'TAB-SIX')" href="javascript: void(0)">Add or change plea</a>
-                <a id="tabG" class="tab" onclick="tab2Group(tab2Content, 'TAB-SEVEN')" href="javascript: void(0)">Notes</a>
+                <a id="tabG" class="tab" onclick="hideNotesWarning(); tab2Group(tab2Content, 'TAB-SEVEN')" href="javascript: void(0)">Notes</a>
                 <hr>
             </div>
             <div id="tab2Content" class="top_30">
