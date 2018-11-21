@@ -85,7 +85,8 @@
         /* CHECK DEFENDANT TELEPHONE */
         var defendantTelephone = document.getElementById('defendantTelephone').innerHTML;
         if (defendantTelephone == "") {
-            document.getElementById('defendantTelephone').innerHTML = '<a href="add-or-change-personal-details-2.html">Add home telephone</a>';
+            document.getElementById('defendantTelephone').innerHTML = '<div class="dummy-link">Add home telephone</div>';
+            //document.getElementById('defendantTelephone').innerHTML = '<a href="add-or-change-personal-details-2.html">Add home telephone</a>';
         }        
         
         /* **************************** */
@@ -312,7 +313,14 @@
     <div class="grid-row">
         <div class="column-full">
             {% include "includes/phase_banner_alpha.html" %}
-            {% include "includes/breadcrumb_back.html" %}
+            
+            <div class="breadcrumbs">
+                <ol>
+                    <!--<li><a href="javascript:history.go(-1);">Back</a></li>-->
+                    <li><a href="../dashboard.html">Home</a></li>
+                </ol>
+            </div>
+            
             <!--{% include "includes/persist-info-banner.html" %}-->
             
             <div class="peristant-info-banner">
@@ -345,13 +353,15 @@
             </script>
 
             <div id="notesWarning" class="notice top_30">
-                <i class="icon icon-important" style="width:26px; height:26px; margin-right:0; margin-top:-15px">
+                <i class="icon icon-important" style="margin-top:-19px">
                     <span class="visually-hidden">Warning</span>
                 </i>
-                <strong class="bold-small" style="padding-left:50px">
+                
+                <strong class="bold-small">
                     There is a <a href="#notes" onclick="goToNotes()">new note</a> for this case
                 </strong>
             </div>
+            
             
             
             
@@ -375,9 +385,11 @@
             <p class="form-hint bottom_0">6 December 1969</p>            
             <p class="form-hint"><span id="defendantAddressLine1">{{data['defendant-address-line-1']}}, </span><span id="defendantAddressLine2">{{data['defendant-address-line-2']}}, </span><span id="defendantAddressLine3">{{data['defendant-address-line-3']}}, </span><span id="defendantAddressCity">{{data['defendant-address-city']}}, </span><span id="defendantAddressPostcode">{{data['defendant-address-postcode']}}</span></p>
             
-            <form class="form" action="/courtadmin/add-or-change-personal-details" method="post">
+            <input class="button" type="submit" value="Add all details from postal reply">
+            
+            <!--<form class="form" action="/courtadmin/add-or-change-personal-details" method="post">
                 <input class="button" type="submit" value="Add all details from postal reply">
-            </form>
+            </form>-->
             
             <!-- WARNING BANNER PATTERN -->
             <div id="warningBanner" class="warning-banner-nest top_30" style="display:none">
@@ -453,7 +465,10 @@
                         </tr>
                     </table>
                     
-                    <p class="top_15"><a href="add-or-change-personal-details-2.html">Change defendant details</a></p>
+                    <p class="top_15">
+                        <div class="dummy-link">Change defendant details</div>
+                        <!--<a href="add-or-change-personal-details-2.html">Change defendant details</a>-->
+                    </p>
                 </div>
                 <div id="tabThreeContent">
 
@@ -523,7 +538,10 @@
                         
                     </table>
                     
-                    <p class="top_15"><a href="upload-documents.html" title="Upload more documents">Upload documents</a></p>
+                    <p class="top_15">
+                        <div class="dummy-link">Upload documents</div>
+                        <!--<a href="upload-documents.html" title="Upload more documents">Upload documents</a>-->
+                    </p>
 
                     <!-- ONINE PLEA
                     <h4 class="heading-medium bottom_10">Online plea</h4>
@@ -554,7 +572,10 @@
                         </tr>
                     </table>
                     
-                    <p class="top_15"><a href="add-or-change-income-2.html">Change income</a></p>
+                    <p class="top_15">
+                        <div class="dummy-link">Change income</div>
+                        <!--<a href="add-or-change-income-2.html">Change income</a>-->
+                    </p>
                     
                 </div>
             </div>
