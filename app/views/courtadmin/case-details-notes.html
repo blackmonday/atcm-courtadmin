@@ -313,13 +313,7 @@
     <div class="grid-row">
         <div class="column-full">
             {% include "includes/phase_banner_alpha.html" %}
-            
-            <div class="breadcrumbs">
-                <ol>
-                    <!--<li><a href="javascript:history.go(-1);">Back</a></li>-->
-                    <li><a href="../dashboard.html">Home</a></li>
-                </ol>
-            </div>
+            {% include "includes/breadcrumb_back.html" %}
             
             <!--{% include "includes/persist-info-banner.html" %}-->
             
@@ -352,7 +346,7 @@
                 }
             </script>
 
-            <div id="notesWarning" class="notice top_30">
+            <div id="notesWarning" class="notice top_30" style="display:none">
                 <i class="icon icon-important" style="margin-top:-19px">
                     <span class="visually-hidden">Warning</span>
                 </i>
